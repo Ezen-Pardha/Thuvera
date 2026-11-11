@@ -416,6 +416,7 @@ def main():
     """
     Execute Kidney, Ureter, and Bladder Lithotripsy tests.
     """
+    test.log("This TC is relate to Lithotripsy SubCategories")
     try:
         clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton,20000))
         enterpin()

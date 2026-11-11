@@ -509,6 +509,7 @@ def exit_preset_screen():
 
 
 def main():
+    test.log("This TC contains the tags from TU-107 to TU-111")
     try:
         clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
         enterpin()

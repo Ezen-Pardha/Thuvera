@@ -73,6 +73,7 @@ def main():
     Accept the initial popup, enter the PIN, and execute
     all Hemostasis profile tests.
     """
+    test.log("This TC softTissues And SubCategory")
     clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
     enterpin()
     navigate_to_vaporize_hemostasis()

@@ -15,7 +15,7 @@ def verify_page(object_name, page_name):
     except Exception as error:
         test.fail(
             "FAIL: {} verification failed - {}".format(
-                page_name, error        # Verify Settings Page
+                page_name, error
             )
         )
         raise

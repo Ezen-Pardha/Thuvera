@@ -57,6 +57,7 @@ def verify_enucleation_hemostasis_profiles():
 
 
 def main():
+    test.log("This TC Contains BPH and Sub Categories")
     clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
     enterpin()
     navigate_to_bph_enucleation_hemostasis()

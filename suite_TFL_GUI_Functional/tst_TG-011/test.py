@@ -32,6 +32,7 @@ def main():
     WHEN the user enters an invalid passcode, the application displays an "Invalid Passcode" pop-up message.
     AND WHEN the user enters the correct passcode the application successfully logs in and navigates to the home screen.
     """
+    test.log("This TC contains TG-011 and TG-012")
     clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
     verify_invalid_passcode()
     enterpin()
