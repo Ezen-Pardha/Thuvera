@@ -73,3 +73,5 @@ apollo_lbHeader_QLabel = {"name": "lbHeader", "type": "QLabel", "visible": 1, "w
 centralWidget_lbHeader_QLabel_3 = {"container": apollo_centralWidget_QFrame, "name": "lbHeader", "type": "QLabel", "visible": 1}
 apollo_stackedWidget_QStackedWidget = {"name": "stackedWidget", "type": "QStackedWidget", "visible": 1, "window": apollo_MainWindow}
 stackedWidget_systemInformationPage_QFrame = {"container": apollo_stackedWidget_QStackedWidget, "name": "systemInformationPage", "type": "QFrame", "visible": 1}
+centralWidget_lbPowerValue_FlashableLabel = {"container": apollo_centralWidget_QStackedWidget, "name": "lbPowerValue", "type": "FlashableLabel", "visible": 1}
+centralWidget_lbPower_QLabel = {"container": apollo_centralWidget_QStackedWidget, "name": "lbPower", "type": "QLabel", "visible": 1}
