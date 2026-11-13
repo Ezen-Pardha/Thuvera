@@ -75,3 +75,7 @@ apollo_stackedWidget_QStackedWidget = {"name": "stackedWidget", "type": "QStacke
 stackedWidget_systemInformationPage_QFrame = {"container": apollo_stackedWidget_QStackedWidget, "name": "systemInformationPage", "type": "QFrame", "visible": 1}
 centralWidget_lbPowerValue_FlashableLabel = {"container": apollo_centralWidget_QStackedWidget, "name": "lbPowerValue", "type": "FlashableLabel", "visible": 1}
 centralWidget_lbPower_QLabel = {"container": apollo_centralWidget_QStackedWidget, "name": "lbPower", "type": "QLabel", "visible": 1}
+centralWidget_lbValue_FlashableLabel_3 = {"container": apollo_centralWidget_QStackedWidget, "name": "lbValue", "occurrence": 2, "type": "FlashableLabel", "visible": 1}
+apollo_lbScreenTitle_QLabel = {"name": "lbScreenTitle", "type": "QLabel", "visible": 1, "window": apollo_MainWindow}
+apollo_tvPresets_PresetsTable = {"name": "tvPresets", "type": "PresetsTable", "visible": 1, "window": apollo_MainWindow}
+apollo_centralWidget_QWidget = {"name": "centralWidget", "type": "QWidget", "visible": 1, "window": apollo_MainWindow}
