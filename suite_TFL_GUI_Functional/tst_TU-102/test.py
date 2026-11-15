@@ -3,4 +3,4 @@
 import names
 
 def main():
-    test.log("This TC is duplicate for Duplicate for TU-99")
+    test.log("Duplicate for - TU-99")
