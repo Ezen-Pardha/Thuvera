@@ -55,6 +55,7 @@ def navigate_to_ureter_lithotripsy():
     """Navigate to Lithotripsy → Ureter."""
 
     try:
+        clickButton(waitForObject(names.apollo_tbAssistant_QToolButton, 20000))
         clickButton(waitForObject(
             names.frWizardPlace_Lithotripsy_WizardButton, 20000))
         test.passes("PASS: Lithotripsy selected")
@@ -72,6 +73,7 @@ def navigate_to_bladder_lithotripsy():
     """Navigate to Lithotripsy → Bladder."""
 
     try:
+        clickButton(waitForObject(names.apollo_tbAssistant_QToolButton, 20000))
         clickButton(waitForObject(
             names.frWizardPlace_Lithotripsy_WizardButton, 20000))
         test.passes("PASS: Lithotripsy selected")
@@ -89,6 +91,7 @@ def navigate_to_vaporize_hemostasis():
     """Navigate to Soft Tissue → Vaporize Hemostasis."""
 
     try:
+        clickButton(waitForObject(names.apollo_tbAssistant_QToolButton, 20000))
         clickButton(waitForObject(
             names.frWizardPlace_Soft_Tissue_WizardButton, 20000))
         test.passes("PASS: Soft Tissue selected")
@@ -106,6 +109,7 @@ def navigate_to_tumor_hemostasis():
     """Navigate to Soft Tissue → Tumor Hemostasis."""
 
     try:
+        clickButton(waitForObject(names.apollo_tbAssistant_QToolButton, 20000))
         clickButton(waitForObject(
             names.frWizardPlace_Soft_Tissue_WizardButton, 20000))
         test.passes("PASS: Soft Tissue selected")
@@ -123,6 +127,7 @@ def navigate_to_incision_hemostasis():
     """Navigate to Soft Tissue → Incision Hemostasis."""
 
     try:
+        clickButton(waitForObject(names.apollo_tbAssistant_QToolButton, 20000))
         clickButton(waitForObject(
             names.frWizardPlace_Soft_Tissue_WizardButton, 20000))
         test.passes("PASS: Soft Tissue selected")
@@ -141,6 +146,7 @@ def navigate_to_bph_enucleation_hemostasis():
     """Navigate to BPH → Enucleation Hemostasis."""
 
     try:
+        clickButton(waitForObject(names.apollo_tbAssistant_QToolButton, 20000))
         clickButton(waitForObject(
             names.frWizardPlace_BPH_WizardButton, 20000))
         test.passes("PASS: BPH selected")
@@ -158,6 +164,7 @@ def navigate_to_bph_enucleation_low_power():
     """Navigate to BPH → Enucleation Low Power."""
 
     try:
+        clickButton(waitForObject(names.apollo_tbAssistant_QToolButton, 20000))
         clickButton(waitForObject(
             names.frWizardPlace_BPH_WizardButton, 20000))
         test.passes("PASS: BPH selected")
@@ -236,3 +243,19 @@ def open_default_profile_utilities():
     except Exception as error:
         test.fail("FAIL: Open Default Profile Utilities - {}".format(error))
         raise
+    
+def service_mode_login():
+    sendEvent(
+        "QMouseEvent",
+        waitForObject(names.passwordScreen_pbService_QPushButton),
+        QEvent.MouseButtonPress,
+        35, 39,
+        Qt.LeftButton, 1, 0
+    )
+    clickButton(waitForObject(names.wdKeypad_pushButton_7_QPushButton))
+    clickButton(waitForObject(names.wdKeypad_pushButton_4_QPushButton))
+    clickButton(waitForObject(names.wdKeypad_pushButton_1_QPushButton))
+    clickButton(waitForObject(names.wdKeypad_pushButton_4_QPushButton))
+    clickButton(waitForObject(names.wdKeypad_pushButton_7_QPushButton))    
+    
+

@@ -194,3 +194,37 @@ apollo_btPulsedMode_QToolButton = {"name": "btPulsedMode", "type": "QToolButton"
 pagesWidget_lbPowerValue_FlashableLabel = {"container": apollo_pagesWidget_QStackedWidget, "name": "lbPowerValue", "type": "FlashableLabel", "visible": 1}
 apollo_lbScreenTitle_QLabel_2 = {"name": "lbScreenTitle", "occurrence": 2, "type": "QLabel", "visible": 1, "window": apollo_MainWindow}
 
+
+frWizardPlace_TREATMENT_TYPE_WizardTitle = {"container": apollo_frWizardPlace_WizardWidget, "text": "TREATMENT TYPE", "type": "WizardTitle", "unnamed": 1, "visible": 1}
+aivComboBoxPopup_QScrollBar = {"container": apollo_aivComboBoxPopup_QTreeView, "type": "QScrollBar", "unnamed": 1, "visible": 1}
+passwordScreen_pbService_QPushButton = {"container": apollo_PasswordScreen_PasswordScreen, "name": "pbService", "type": "QPushButton", "visible": 1}
+apollo_ServiceModePasswordScreen_ServiceModePasswordScreen = {"name": "ServiceModePasswordScreen", "type": "ServiceModePasswordScreen", "visible": 1, "window": apollo_MainWindow}
+serviceModePasswordScreen_wdKeypad_Keypad = {"container": apollo_ServiceModePasswordScreen_ServiceModePasswordScreen, "name": "wdKeypad", "type": "Keypad", "visible": 1}
+wdKeypad_pushButton_7_QPushButton = {"container": serviceModePasswordScreen_wdKeypad_Keypad, "name": "pushButton_7", "type": "QPushButton", "visible": 1}
+wdKeypad_pushButton_4_QPushButton = {"container": serviceModePasswordScreen_wdKeypad_Keypad, "name": "pushButton_4", "type": "QPushButton", "visible": 1}
+wdKeypad_pushButton_1_QPushButton = {"container": serviceModePasswordScreen_wdKeypad_Keypad, "name": "pushButton_1", "type": "QPushButton", "visible": 1}
+apollo_ServiceModeScreen_ServiceModeScreen = {"name": "ServiceModeScreen", "type": "ServiceModeScreen", "visible": 1, "window": apollo_MainWindow}
+serviceModeScreen_tabWidget_QTabWidget = {"container": apollo_ServiceModeScreen_ServiceModeScreen, "name": "tabWidget", "type": "QTabWidget", "visible": 1}
+serviceModeScreen_qt_tabwidget_stackedwidget_QStackedWidget = {"container": apollo_ServiceModeScreen_ServiceModeScreen, "name": "qt_tabwidget_stackedwidget", "type": "QStackedWidget", "visible": 1}
+qt_tabwidget_stackedwidget_tabSystemEventLog_QWidget = {"container": serviceModeScreen_qt_tabwidget_stackedwidget_QStackedWidget, "name": "tabSystemEventLog", "type": "QWidget", "visible": 1}
+tabSystemEventLog_tableView_QTableView = {"container": qt_tabwidget_stackedwidget_tabSystemEventLog_QWidget, "name": "tableView", "type": "QTableView", "visible": 1}
+tableView_QHeaderView = {"container": tabSystemEventLog_tableView_QTableView, "orientation": 1, "type": "QHeaderView", "unnamed": 1, "visible": 1}
+iD_HeaderViewItem = {"container": tableView_QHeaderView, "text": "ID", "type": "HeaderViewItem", "visible": True}
+date_Time_HeaderViewItem = {"container": tableView_QHeaderView, "text": "Date/Time", "type": "HeaderViewItem", "visible": True}
+event_Type_HeaderViewItem = {"container": tableView_QHeaderView, "text": "Event Type", "type": "HeaderViewItem", "visible": True}
+tableView_QScrollBar = {"container": tabSystemEventLog_tableView_QTableView, "type": "QScrollBar", "unnamed": 1, "visible": 1}
+error_Code_HeaderViewItem = {"container": tableView_QHeaderView, "text": "Error Code", "type": "HeaderViewItem", "visible": True}
+variable_Value_HeaderViewItem = {"container": tableView_QHeaderView, "text": "Variable Value", "type": "HeaderViewItem", "visible": True}
+serviceModeScreen_pbExit_QPushButton = {"container": apollo_ServiceModeScreen_ServiceModeScreen, "name": "pbExit", "type": "QPushButton", "visible": 1}
+apollo_NO_QPushButton = {"text": "NO", "type": "QPushButton", "unnamed": 1, "visible": 1, "window": apollo_MainWindow}
+centralWidget_btShortPulse_ButtonWithClickSound = {"container": apollo_centralWidget_QStackedWidget, "name": "btShortPulse", "type": "ButtonWithClickSound", "visible": 1}
+centralWidget_lbPulseWidth_QLabel = {"container": apollo_centralWidget_QStackedWidget, "name": "lbPulseWidth", "type": "QLabel", "visible": 1}
+centralWidget_btMiddlePulse_ButtonWithClickSound = {"container": apollo_centralWidget_QStackedWidget, "name": "btMiddlePulse", "type": "ButtonWithClickSound", "visible": 1}
+centralWidget_slPulseWidth_PulseWidthSelector = {"container": apollo_centralWidget_QStackedWidget, "name": "slPulseWidth", "type": "PulseWidthSelector", "visible": 1}
+centralWidget_btDualPulse_ButtonWithClickSound = {"container": apollo_centralWidget_QStackedWidget, "name": "btDualPulse", "type": "ButtonWithClickSound", "visible": 1}
+comboBox_lbLogo_QLabel_2 = {"container": centralWidget_comboBox_ComboBox, "name": "lbLogo", "type": "QLabel", "visible": 1}
+aivComboBoxPopup_Kidney_Fragment_QModelIndex = {"column": 0, "container": apollo_aivComboBoxPopup_QTreeView, "text": "Kidney Fragment", "type": "QModelIndex"}
+aivComboBoxPopup_Kidney_Dust_QModelIndex = {"column": 0, "container": apollo_aivComboBoxPopup_QTreeView, "text": "Kidney Dust", "type": "QModelIndex"}
+aivComboBoxPopup_Kidney_Popcorn_QModelIndex = {"column": 0, "container": apollo_aivComboBoxPopup_QTreeView, "text": "Kidney Popcorn", "type": "QModelIndex"}
+centralWidget_btLongPulse_ButtonWithClickSound = {"container": apollo_centralWidget_QStackedWidget, "name": "btLongPulse", "type": "ButtonWithClickSound", "visible": 1}
+
