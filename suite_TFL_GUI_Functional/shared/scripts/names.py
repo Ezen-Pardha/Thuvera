@@ -162,6 +162,20 @@ centralWidget_lbHeader_QLabel_3 = {"container": apollo_centralWidget_QFrame, "na
 apollo_stackedWidget_QStackedWidget = {"name": "stackedWidget", "type": "QStackedWidget", "visible": 1, "window": apollo_MainWindow}
 stackedWidget_systemInformationPage_QFrame = {"container": apollo_stackedWidget_QStackedWidget, "name": "systemInformationPage", "type": "QFrame", "visible": 1}
 
+
+keyboardFrame_l_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "l", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+frToolbar_tbDeleteProfile_QToolButton = {"container": apollo_frToolbar_QFrame, "name": "tbDeleteProfile", "type": "QToolButton", "visible": 1}
+centralWidget_frmComboBox_QFrame = {"container": apollo_centralWidget_QFrame, "name": "frmComboBox", "type": "QFrame", "visible": 1}
+frmComboBox_cbLang_QComboBox = {"container": centralWidget_frmComboBox_QFrame, "name": "cbLang", "type": "QComboBox", "visible": 1}
+centralWidget_sldVolume_QSlider = {"container": apollo_centralWidget_QFrame, "name": "sldVolume", "type": "QSlider", "visible": 1}
+centralWidget_lbHighVolume_QLabel = {"container": apollo_centralWidget_QFrame, "name": "lbHighVolume", "type": "QLabel", "visible": 1}
+apollo_stateSwitch_StateSwitch = {"name": "stateSwitch", "type": "StateSwitch", "visible": 1, "window": apollo_MainWindow}
+stateSwitch_lbReady_QLabel = {"container": apollo_stateSwitch_StateSwitch, "name": "lbReady", "type": "QLabel", "visible": 1}
+stateSwitch_lbStandby_QLabel = {"container": apollo_stateSwitch_StateSwitch, "name": "lbStandby", "type": "QLabel", "visible": 1}
+apollo_LeftPedalBtn_QPushButton = {"name": "LeftPedalBtn", "type": "QPushButton", "visible": 1, "window": apollo_MainWindow}
+apollo_RightPedalBtn_QPushButton = {"name": "RightPedalBtn", "type": "QPushButton", "visible": 1, "window": apollo_MainWindow}
+apollo_MiddlePedalBtn_QPushButton = {"name": "MiddlePedalBtn", "type": "QPushButton", "visible": 1, "window": apollo_MainWindow}
+
 centralWidget_lbPowerValue_FlashableLabel = {"container": apollo_centralWidget_QStackedWidget, "name": "lbPowerValue", "type": "FlashableLabel", "visible": 1}
 centralWidget_lbPower_QLabel = {"container": apollo_centralWidget_QStackedWidget, "name": "lbPower", "type": "QLabel", "visible": 1}
 centralWidget_lbValue_FlashableLabel_3 = {"container": apollo_centralWidget_QStackedWidget, "name": "lbValue", "occurrence": 2, "type": "FlashableLabel", "visible": 1}
@@ -193,6 +207,7 @@ pRESET_NAME_HeaderViewItem = {"container": tvPresets_QHeaderView, "text": "PRESE
 keyboardFrame_KeyButton = {"container": apollo_keyboardFrame_QFrame, "text": "⌫", "type": "KeyButton", "unnamed": 1, "visible": 1}
 question_OK_QPushButton = {"container": apollo_Question_MessageBox, "text": "OK", "type": "QPushButton", "unnamed": 1, "visible": 1}
 frToolbar_tbAddPreset_QToolButton = {"container": apollo_frToolbar_QFrame, "name": "tbAddPreset", "type": "QToolButton", "visible": 1}
+
 
 
 keyboardFrame_y_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "y", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
