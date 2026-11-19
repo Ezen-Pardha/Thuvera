@@ -261,3 +261,14 @@ aivComboBoxPopup_Kidney_Dust_QModelIndex = {"column": 0, "container": apollo_aiv
 aivComboBoxPopup_Kidney_Popcorn_QModelIndex = {"column": 0, "container": apollo_aivComboBoxPopup_QTreeView, "text": "Kidney Popcorn", "type": "QModelIndex"}
 centralWidget_btLongPulse_ButtonWithClickSound = {"container": apollo_centralWidget_QStackedWidget, "name": "btLongPulse", "type": "ButtonWithClickSound", "visible": 1}
 
+
+centralWidget_pbCwMode_QToolButton = {"container": apollo_centralWidget_QStackedWidget, "name": "pbCwMode", "type": "QToolButton", "visible": 1}
+centralWidget_pbCwMode_QToolButton_2 = {"container": apollo_centralWidget_QStackedWidget, "name": "pbCwMode", "occurrence": 2, "type": "QToolButton", "visible": 1}
+centralWidget_btShortPulse_ButtonWithClickSound_2 = {"container": apollo_centralWidget_QStackedWidget, "name": "btShortPulse", "occurrence": 2, "type": "ButtonWithClickSound", "visible": 1}
+centralWidget_btMiddlePulse_ButtonWithClickSound_2 = {"container": apollo_centralWidget_QStackedWidget, "name": "btMiddlePulse", "occurrence": 2, "type": "ButtonWithClickSound", "visible": 1}
+centralWidget_btLongPulse_ButtonWithClickSound_2 = {"container": apollo_centralWidget_QStackedWidget, "name": "btLongPulse", "occurrence": 2, "type": "ButtonWithClickSound", "visible": 1}
+centralWidget_slPulseWidth_PulseWidthSelector_2 = {"container": apollo_centralWidget_QStackedWidget, "name": "slPulseWidth", "occurrence": 2, "type": "PulseWidthSelector", "visible": 1}
+apollo_MessageBoxBackground = {"type": "MessageBoxBackground", "unnamed": 1, "visible": 1, "window": apollo_MainWindow}
+apollo_YES_QPushButton = {"text": "YES", "type": "QPushButton", "unnamed": 1, "visible": 1, "window": apollo_MainWindow}
+frmComboBoxHeader_lbLogo_QLabel = {"container": apollo_frmComboBoxHeader_ComboBoxTwin, "name": "lbLogo", "type": "QLabel", "visible": 1}
+
