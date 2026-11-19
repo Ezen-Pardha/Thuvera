@@ -4,6 +4,7 @@ import names
 from common import *
 
 def main():
+    test.log("This TC contains TU-183 to TU-186")
     test.log("SVV TAG: Settings Screen Top Banner Displayed TU-183")
     clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
     enterpin()

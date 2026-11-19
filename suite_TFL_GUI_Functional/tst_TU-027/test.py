@@ -4,6 +4,7 @@ import names
 from common import *
 
 def main():
+   
     clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
     enterpin()
     test.log("Profile selection screen is verified ")
