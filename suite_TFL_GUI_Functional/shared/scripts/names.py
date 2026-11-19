@@ -162,6 +162,7 @@ centralWidget_lbHeader_QLabel_3 = {"container": apollo_centralWidget_QFrame, "na
 apollo_stackedWidget_QStackedWidget = {"name": "stackedWidget", "type": "QStackedWidget", "visible": 1, "window": apollo_MainWindow}
 stackedWidget_systemInformationPage_QFrame = {"container": apollo_stackedWidget_QStackedWidget, "name": "systemInformationPage", "type": "QFrame", "visible": 1}
 
+
 keyboardFrame_l_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "l", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
 frToolbar_tbDeleteProfile_QToolButton = {"container": apollo_frToolbar_QFrame, "name": "tbDeleteProfile", "type": "QToolButton", "visible": 1}
 centralWidget_frmComboBox_QFrame = {"container": apollo_centralWidget_QFrame, "name": "frmComboBox", "type": "QFrame", "visible": 1}
@@ -174,6 +175,39 @@ stateSwitch_lbStandby_QLabel = {"container": apollo_stateSwitch_StateSwitch, "na
 apollo_LeftPedalBtn_QPushButton = {"name": "LeftPedalBtn", "type": "QPushButton", "visible": 1, "window": apollo_MainWindow}
 apollo_RightPedalBtn_QPushButton = {"name": "RightPedalBtn", "type": "QPushButton", "visible": 1, "window": apollo_MainWindow}
 apollo_MiddlePedalBtn_QPushButton = {"name": "MiddlePedalBtn", "type": "QPushButton", "visible": 1, "window": apollo_MainWindow}
+
+centralWidget_lbPowerValue_FlashableLabel = {"container": apollo_centralWidget_QStackedWidget, "name": "lbPowerValue", "type": "FlashableLabel", "visible": 1}
+centralWidget_lbPower_QLabel = {"container": apollo_centralWidget_QStackedWidget, "name": "lbPower", "type": "QLabel", "visible": 1}
+centralWidget_lbValue_FlashableLabel_3 = {"container": apollo_centralWidget_QStackedWidget, "name": "lbValue", "occurrence": 2, "type": "FlashableLabel", "visible": 1}
+apollo_lbScreenTitle_QLabel = {"name": "lbScreenTitle", "type": "QLabel", "visible": 1, "window": apollo_MainWindow}
+apollo_tvPresets_PresetsTable = {"name": "tvPresets", "type": "PresetsTable", "visible": 1, "window": apollo_MainWindow}
+apollo_centralWidget_QWidget = {"name": "centralWidget", "type": "QWidget", "visible": 1, "window": apollo_MainWindow}
+centralWidget_pbSaveSettings_QPushButton = {"container": apollo_centralWidget_QStackedWidget, "name": "pbSaveSettings", "type": "QPushButton", "visible": 1}
+apollo_edName_QLineEdit = {"name": "edName", "type": "QLineEdit", "visible": 1, "window": apollo_MainWindow}
+keyboardFrame_k_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "k", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+keyboardFrame_i_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "i", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+keyboardFrame_d_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "d", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+keyboardFrame_n_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "n", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+keyboardFrame_e_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "e", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+keyboardFrame_y_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "y", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+keyboardFrame_Enter_KeyButtonEnter = {"container": apollo_keyboardFrame_QFrame, "text": "Enter", "type": "KeyButtonEnter", "unnamed": 1, "visible": 1}
+apollo_btSave_QPushButton = {"name": "btSave", "type": "QPushButton", "visible": 1, "window": apollo_MainWindow}
+keyboardFrame_p_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "p", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+keyboardFrame_c_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "c", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+keyboardFrame_s_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "s", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+passwordScreen_pbService_QPushButton = {"container": apollo_PasswordScreen_PasswordScreen, "name": "pbService", "type": "QPushButton", "visible": 1}
+frToolbar_tbEditPreset_QToolButton = {"container": apollo_frToolbar_QFrame, "name": "tbEditPreset", "type": "QToolButton", "visible": 1}
+frToolbar_tbDeletePreset_QToolButton = {"container": apollo_frToolbar_QFrame, "name": "tbDeletePreset", "type": "QToolButton", "visible": 1}
+tvPresets_QHeaderView = {"container": apollo_tvPresets_PresetsTable, "orientation": 1, "type": "QHeaderView", "unnamed": 1, "visible": 1}
+eNERGY_HeaderViewItem = {"container": tvPresets_QHeaderView, "text": "ENERGY", "type": "HeaderViewItem", "visible": True}
+fREQUENCY_HeaderViewItem = {"container": tvPresets_QHeaderView, "text": "FREQUENCY", "type": "HeaderViewItem", "visible": True}
+pOWER_HeaderViewItem = {"container": tvPresets_QHeaderView, "text": "POWER", "type": "HeaderViewItem", "visible": True}
+pULSE_WIDTH_HeaderViewItem = {"container": tvPresets_QHeaderView, "text": "PULSE WIDTH", "type": "HeaderViewItem", "visible": True}
+pRESET_NAME_HeaderViewItem = {"container": tvPresets_QHeaderView, "text": "PRESET NAME", "type": "HeaderViewItem", "visible": True}
+keyboardFrame_KeyButton = {"container": apollo_keyboardFrame_QFrame, "text": "⌫", "type": "KeyButton", "unnamed": 1, "visible": 1}
+question_OK_QPushButton = {"container": apollo_Question_MessageBox, "text": "OK", "type": "QPushButton", "unnamed": 1, "visible": 1}
+frToolbar_tbAddPreset_QToolButton = {"container": apollo_frToolbar_QFrame, "name": "tbAddPreset", "type": "QToolButton", "visible": 1}
+
 
 
 keyboardFrame_y_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "y", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
