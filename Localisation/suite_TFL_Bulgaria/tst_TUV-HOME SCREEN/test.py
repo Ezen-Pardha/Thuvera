@@ -1,0 +1,124 @@
+# -*- coding: utf-8 -*-
+
+import names
+from squish import *
+from common import *
+
+def main():
+
+    clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
+    enterpin()
+    open_default_profile_settings()
+
+    mouseClick(waitForObject(names.frmComboBox_cbLang_QComboBox), 184, 44, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObjectItem(names.frmComboBox_cbLang_QComboBox, "Български (Bulgaria)"), 130, 25, Qt.NoModifier, Qt.LeftButton)
+    
+    clickButton(waitForObject(names.apollo_btHome_QPushButton))
+
+    mouseClick(waitForObject(names.centralWidget_PulseModeWidget_PulseModeWidget), 18, 9, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObject(names.centralWidget_lbHeader_QLabel), 57, 3, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObject(names.apollo_lbHeader_QLabel), 52, 2, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObject(names.centralWidget_lbPower_QLabel), 38, 9, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObject(names.centralWidget_lbPulseWidth_QLabel), 105, 33, Qt.NoModifier, Qt.LeftButton)
+    clickButton(waitForObject(names.centralWidget_pbPulsedMode_QToolButton))
+    clickButton(waitForObject(names.centralWidget_pbCwMode_QToolButton))
+    mouseClick(waitForObject(names.centralWidget_PulseModeWidget_PulseModeWidget), 457, 469, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObject(names.stateSwitch_lbStandby_QLabel), 155, 48, Qt.NoModifier, Qt.LeftButton)
+    test.vp("homeScreenStandbyMode")
+    mouseClick(waitForObject(names.stateSwitch_lbReady_QLabel), 104, 35, Qt.NoModifier, Qt.LeftButton)
+    test.vp("homeScreenReadyMode")
+    mouseClick(waitForObject(names.stateSwitch_lbStandby_QLabel), 176, 34, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObject(names.comboBox_lbPixmap_QLabel), 20, 25, Qt.NoModifier, Qt.LeftButton)
+    test.vp("homeScreenPresets1")
+    sendEvent("QWheelEvent", waitForObject(names.apollo_aivComboBoxPopup_QTreeView), 368, 75, -120, 0, 2)
+    scrollTo(waitForObject(names.aivComboBoxPopup_QScrollBar), 446)
+    test.vp("homeScreenPresets2")
+
+    validate_localization(
+ 
+        objects=[
+            waitForObject(names.centralWidget_lbHeader_QLabel),
+            waitForObject(names.apollo_lbHeader_QLabel),
+            waitForObject(names.centralWidget_lbPower_QLabel),
+            waitForObject(names.centralWidget_lbPulseWidth_QLabel),
+            waitForObject(names.centralWidget_pbPulsedMode_QToolButton),
+            waitForObject(names.centralWidget_pbCwMode_QToolButton),
+            waitForObject(names.centralWidget_PulseModeWidget_PulseModeWidget),
+            waitForObject(names.stateSwitch_lbStandby_QLabel),
+            waitForObject(names.stateSwitch_lbReady_QLabel),
+            waitForObjectExists(names.aivComboBoxPopup_QModelIndex_3),
+            waitForObjectExists(names.aivComboBoxPopup_QModelIndex_4),
+            waitForObjectExists(names.aivComboBoxPopup_Popcorn_QModelIndex),
+            waitForObjectExists(names.aivComboBoxPopup_QModelIndex_5),
+            waitForObjectExists(names.aivComboBoxPopup_QModelIndex_6),
+            waitForObjectExists(names.aivComboBoxPopup_QModelIndex_7),
+            waitForObjectExists(names.aivComboBoxPopup_QModelIndex_8),
+            waitForObject(names.apollo_aivComboBoxPopup_QTreeView),
+            waitForObjectExists(names.aivComboBoxPopup_QModelIndex_9),
+            waitForObjectExists(names.aivComboBoxPopup_QModelIndex_10),
+            waitForObjectExists(names.aivComboBoxPopup_QModelIndex_11),
+            waitForObjectExists(names.aivComboBoxPopup_QModelIndex_12),
+            waitForObjectExists(names.aivComboBoxPopup_QModelIndex_13),
+            waitForObjectExists(names.aivComboBoxPopup_CW_QModelIndex),
+            waitForObjectExists(names.aivComboBoxPopup_QModelIndex_14)
+              
+          
+        ],
+ 
+        screen_name="HOME SCREEN/TREATMENT",
+ 
+        expected_strings=[
+            
+            "ENERGY (J)",
+            "FREQUENCY (Hz)",
+            "POWER (W)",
+            "PULSE WIDTH",
+            "PULSED",
+            "CW",
+            "AIMING BEAM",
+            "STANDBY",
+            "READY",
+            "Kidney Dust (High)",
+            "Kidney Dust (Low)",
+            "Kidney Popcorn",
+            "Kidney Fragment (High)",
+            "Kidney Fragment (Low)",
+            "Ureter (Fragment)",
+            "Ureter Dust",
+            "Bladder Fragment",
+            "COAG",
+            "Prostate Enucleate (High)",
+            "Prostate Enucleate (Low)",
+            "Tissue Vaporize (Pulsed)",
+            "Tissue Vaporize (CW)",
+            "Tumor Ablation/Excision"
+            
+        ],
+    )
+    mouseClick(waitForObject(names.frmComboBoxHeader_lbPixmap_QLabel), 16, 22, Qt.NoModifier, Qt.LeftButton)
+    clickButton(waitForObject(names.centralWidget_pbReduce_QPushButton))
+    mouseClick(waitForObject(names.comboBox_lbValue_AutoReducibleFontSizeLabel), 69, 20, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObject(names.frmComboBoxHeader_lbValue_AutoReducibleFontSizeLabel), 69, 20, Qt.NoModifier, Qt.LeftButton)
+
+    clickButton(waitForObject(names.centralWidget_pbSaveSettings_QPushButton))
+    clickButton(waitForObject(names.apollo_btCancel_QPushButton))
+  
+    validate_localization(
+         objects=[
+             waitForObjectExists(names.comboBox_lbValue_AutoReducibleFontSizeLabel),
+             waitForObjectExists(names.centralWidget_pbSaveSettings_QPushButton)
+          
+        ],
+ 
+        screen_name="HOME SCREEN/TREATMENT",
+ 
+        expected_strings=[
+            "CUSTOM",
+            "Save Settings"
+        ]
+    )
+    
+    mouseClick(waitForObject(names.comboBox_lbValue_AutoReducibleFontSizeLabel), 105, 20, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObjectItem(names.apollo_aivComboBoxPopup_QTreeView, "Песъчинки в бъбрека (високо)"), 248, 38, Qt.NoModifier, Qt.LeftButton)
+    
+ 
