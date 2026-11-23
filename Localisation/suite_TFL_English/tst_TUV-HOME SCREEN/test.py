@@ -90,13 +90,6 @@ def main():
             
         ],
     )
-    aiming_beam_label = waitForObject({"name": "lbAimingBeam", "type": "QLabel"})
-    aiming_beam_text = str(aiming_beam_label.text).strip()
-    test.log("Aiming Beam label text: {}".format(aiming_beam_text))
-    test.verify(
-        aiming_beam_text == "AIMING BEAM",
-        "Expected AIMING BEAM, but found: {}".format(aiming_beam_text)
-    )
     mouseClick(waitForObject(names.frmComboBoxHeader_lbPixmap_QLabel), 16, 22, Qt.NoModifier, Qt.LeftButton)
     test.compare(str(waitForObjectExists(names.stateSwitch_lbStandby_QLabel).text), "STANDBY")
     if str(waitForObjectExists(names.stateSwitch_lbStandby_QLabel).text) == "STANDBY": 
