@@ -1,6 +1,8 @@
 import openpyxl
 import re
 import os
+import names
+import unicodedata
 
 from squish import *
 
@@ -17,7 +19,7 @@ EXCEL_PATH = os.path.abspath(
 )
 
 
-LANGUAGE = "Spanish"
+LANGUAGE = "English"
 
 
 
@@ -371,7 +373,41 @@ def verify_strings(
 
 
 
+        # for actual_normalized, actual_text in normalized_runtime      
         for actual_normalized, actual_text in normalized_runtime:
+
+            # 1. Dynamic matching ONLY for XXXX strings
+            if "XXXX" in str(expected_localized):
+        
+                if match_profile_placeholder(
+                    actual_text,
+                    expected_localized
+                ):
+                    matched = True
+        
+                    test.log(
+                        "PASS: Dynamic placeholder matched -> "
+                        + repr(actual_text)
+                    )
+                    break
+        
+            # 2. Normal matching for all static strings
+            else:
+        
+                if actual_normalized == expected_normalized:
+                    matched = True
+                    break
+        
+                elif (
+                    len(expected_normalized) >= 4
+                    and expected_normalized in actual_normalized
+                ):
+                    matched = True
+                    break
+        
+            # 3. Check untranslated English text
+            if actual_normalized == excel_item["normalized_english"]:
+                untranslated = True
 
 
   
@@ -502,5 +538,140 @@ def validate_localization(
     )
     
     
+def enterpin():
+    """Login to the application by accepting the popup and entering PIN 0000."""
+    for i in range(4):
+            clickButton(waitForObject(names.wdKeypad_pushButton_0_QPushButton, 20000))
+    
+    test.passes("PASS: PIN 0000 entered")
+    
+def open_default_profile_presets():
+    """Select Default Profile and open Presets."""
+ 
+    try:
+        clickButton(waitForObject(
+            names.sclProfiles_Default_ProfileButton, 20000))
+        test.passes("PASS: Default Profile selected")
+ 
+        clickButton(waitForObject(
+            names.apollo_btPresets_QPushButton, 20000))
+        test.passes("PASS: Presets screen opened")
+ 
+    except Exception as error:
+        test.fail("FAIL: Open Default Profile Presets - {}".format(error))
+        raise
+  
+    
+def open_default_profile_treatment_logs():
+    """Select Default Profile and open Treatment Logs."""
+ 
+    try:
+        clickButton(waitForObject(
+            names.sclProfiles_Default_ProfileButton, 20000))
+        test.passes("PASS: Default Profile selected")
+ 
+        clickButton(waitForObject(
+            names.apollo_btTreatmentLogs_QPushButton, 20000))
+        test.passes("PASS: Treatment Logs screen opened")
+ 
+    except Exception as error:
+        test.fail("FAIL: Open Default Profile Treatment Logs - {}".format(error))
+        raise
+    
+ 
+def open_default_profile_settings():
+    """Select Default Profile and open Settings."""
+ 
+    try:
+        clickButton(waitForObject(
+            names.sclProfiles_Default_ProfileButton, 20000))
+        test.passes("PASS: Default Profile selected")
+ 
+        clickButton(waitForObject(
+            names.apollo_btSettings_QPushButton, 20000))
+        test.passes("PASS: Settings screen opened")
+ 
+    except Exception as error:
+        test.fail("FAIL: Open Default Profile Settings - {}".format(error))
+        raise    
     
     
+def get_text_lines(obj):
+    lines = []
+
+    try:
+        if not obj.visible:
+            return lines
+    except:
+        pass
+
+    try:
+        text = str(obj.text).strip()
+        if text:
+            lines.append(text)
+    except:
+        pass
+
+    # READ PLACEHOLDER TEXT
+    try:
+        placeholder = str(obj.placeholderText).strip()
+        if placeholder:
+            lines.append(placeholder)
+    except:
+        pass
+
+    try:
+        title = str(obj.title).strip()
+        if title:
+            lines.append(title)
+    except:
+        pass
+
+    try:
+        for child in object.children(obj):
+            lines.extend(get_text_lines(child))
+    except:
+        pass
+
+    return lines
+
+
+
+def match_profile_placeholder(actual_text, expected_text):
+
+    def clean_text(text):
+        text = unicodedata.normalize("NFKC", str(text))
+
+        # Ignore case differences
+        text = text.casefold()
+
+        # Standardize quotation marks
+        text = text.translate(str.maketrans({
+            "„": '"',
+            "”": '"',
+            "“": '"',
+            "‟": '"',
+            "’": "'",
+            "‘": "'"
+        }))
+
+        # Standardize whitespace and line breaks
+        text = re.sub(r"<br\s*/?>", " ", text, flags=re.IGNORECASE)
+        text = re.sub(r"\s+", " ", text).strip()
+
+        return text
+
+    actual = clean_text(actual_text)
+    expected = clean_text(expected_text)
+
+    if "xxxx" not in expected:
+        return actual == expected
+
+    pattern = re.escape(expected)
+
+    pattern = pattern.replace(
+        re.escape("xxxx"),
+        r".+?"
+    )
+
+    return re.fullmatch(pattern, actual) is not None
