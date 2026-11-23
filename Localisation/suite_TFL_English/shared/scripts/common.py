@@ -372,11 +372,9 @@ def verify_strings(
         untranslated = False
 
 
-
-        # for actual_normalized, actual_text in normalized_runtime      
+      
         for actual_normalized, actual_text in normalized_runtime:
 
-            # 1. Dynamic matching ONLY for XXXX strings
             if "XXXX" in str(expected_localized):
         
                 if match_profile_placeholder(
@@ -391,7 +389,6 @@ def verify_strings(
                     )
                     break
         
-            # 2. Normal matching for all static strings
             else:
         
                 if actual_normalized == expected_normalized:
@@ -405,7 +402,6 @@ def verify_strings(
                     matched = True
                     break
         
-            # 3. Check untranslated English text
             if actual_normalized == excel_item["normalized_english"]:
                 untranslated = True
 
@@ -491,8 +487,6 @@ def verify_strings(
 
             fail_count += 1
 
-    print("--------------------------------------------------")
-
     print(
         screen_name
         + " Localization Result: PASS = "
@@ -500,8 +494,6 @@ def verify_strings(
         + ", FAIL = "
         + str(fail_count)
     )
-
-    print("--------------------------------------------------")
 
 
     if fail_count == 0 and pass_count > 0:
@@ -642,10 +634,8 @@ def match_profile_placeholder(actual_text, expected_text):
     def clean_text(text):
         text = unicodedata.normalize("NFKC", str(text))
 
-        # Ignore case differences
         text = text.casefold()
 
-        # Standardize quotation marks
         text = text.translate(str.maketrans({
             "„": '"',
             "”": '"',
@@ -655,7 +645,6 @@ def match_profile_placeholder(actual_text, expected_text):
             "‘": "'"
         }))
 
-        # Standardize whitespace and line breaks
         text = re.sub(r"<br\s*/?>", " ", text, flags=re.IGNORECASE)
         text = re.sub(r"\s+", " ", text).strip()
 
