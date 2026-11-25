@@ -94,4 +94,12 @@ def main():
         "PASS: Program navigated to Save Settings screen"
     )
 
+    mouseClick(waitForObject(names.apollo_wdNavigationBar_QWidget), 61, 60, Qt.NoModifier, Qt.LeftButton)
+    clickButton(waitForObject(names.apollo_btCancel_QPushButton))
+    mouseClick(waitForObject(names.centralWidget_comboBox_ComboBox), 471, 12, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObjectItem(names.apollo_aivComboBoxPopup_QTreeView, "Kidney Dust (High)"), 281, 49, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObject(names.comboBox_lbValue_AutoReducibleFontSizeLabel_2), 45, 37, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObjectItem(names.apollo_aivComboBoxPopup_QTreeView, "Kidney Dust (High)"), 75, 29, Qt.NoModifier, Qt.LeftButton)
+
+
   

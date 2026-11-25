@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 import names
 from squish import *
-from common import *  # Provides enterpin() if it is defined in common.py
-
-# Assumption: enterpin() is already defined in your shared/common script.
-# Pulse Width is a custom selector, not a QPushButton, so use mouseClick.
+from common import *  
 
 def select_pulse_width(selector_name, x, y, description):
     try:

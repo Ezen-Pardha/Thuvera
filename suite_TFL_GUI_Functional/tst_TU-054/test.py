@@ -87,3 +87,7 @@ def main():
             clickButton(waitForObject(button))
             snooze(1)
             verifyPower()
+
+    mouseClick(waitForObject(names.centralWidget_comboBox_ComboBox), 275, 34, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObjectItem(names.apollo_aivComboBoxPopup_QTreeView, "Kidney Dust (High)"), 250, 26, Qt.NoModifier, Qt.LeftButton)
+

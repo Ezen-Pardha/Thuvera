@@ -368,6 +368,33 @@ def main():
     else:
         test.fail("Add Profile button is enabled - a new profile can be added") 
     
+    clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
+    clickButton(waitForObject(names.sclProfiles_Test2_ProfileButton))
+    clickButton(waitForObject(names.question_OK_QPushButton))
+    clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
+    clickButton(waitForObject(names.sclProfiles_Test3_ProfileButton))
+    clickButton(waitForObject(names.question_OK_QPushButton))
+    clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
+    clickButton(waitForObject(names.sclProfiles_Test4_ProfileButton))
+    clickButton(waitForObject(names.question_OK_QPushButton))
+    clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
+    clickButton(waitForObject(names.sclProfiles_Test5_ProfileButton))
+    clickButton(waitForObject(names.question_OK_QPushButton))
+    clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
+    clickButton(waitForObject(names.sclProfiles_Test6_ProfileButton))
+    clickButton(waitForObject(names.question_OK_QPushButton))
+    clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
+    clickButton(waitForObject(names.sclProfiles_Test7_ProfileButton))
+    clickButton(waitForObject(names.question_OK_QPushButton))
+    clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
+    clickButton(waitForObject(names.sclProfiles_Test8_ProfileButton))
+    clickButton(waitForObject(names.question_OK_QPushButton))
+    clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
+    clickButton(waitForObject(names.sclProfiles_Test1_ProfileButton))
+    clickButton(waitForObject(names.question_OK_QPushButton))
+    
+    
+    
     snooze(3)
     
 

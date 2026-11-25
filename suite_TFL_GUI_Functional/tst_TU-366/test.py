@@ -173,3 +173,8 @@ def main():
     create_profile("gemini")
     create_blank_profile()
     edit_profile("thuvera")
+    clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
+    clickButton(waitForObject(names.sclProfiles_thuvera_ProfileButton))
+    clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
+    clickButton(waitForObject(names.sclProfiles_gemini_ProfileButton))
+    clickButton(waitForObject(names.question_OK_QPushButton))
