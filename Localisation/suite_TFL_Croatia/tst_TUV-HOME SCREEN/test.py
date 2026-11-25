@@ -19,6 +19,13 @@ def main():
     clickButton(waitForObject(names.centralWidget_pbPulsedMode_QToolButton))
     clickButton(waitForObject(names.centralWidget_pbCwMode_QToolButton))
     mouseClick(waitForObject(names.centralWidget_PulseModeWidget_PulseModeWidget), 457, 469, Qt.NoModifier, Qt.LeftButton)
+    aiming_beam_label = waitForObject({"name": "lbAimingBeam", "type": "QLabel"})
+    aiming_beam_text = str(aiming_beam_label.text).strip()
+    test.log("Aiming Beam label text: {}".format(aiming_beam_text))
+    test.verify(
+        aiming_beam_text == "AIMING BEAM",
+        "Expected AIMING BEAM, but found: {}".format(aiming_beam_text)
+    )
     mouseClick(waitForObject(names.stateSwitch_lbStandby_QLabel), 155, 48, Qt.NoModifier, Qt.LeftButton)
     mouseClick(waitForObject(names.stateSwitch_lbReady_QLabel), 104, 35, Qt.NoModifier, Qt.LeftButton)
     test.compare(str(waitForObjectExists(names.stateSwitch_lbReady_QLabel).text), "SPREMNO")

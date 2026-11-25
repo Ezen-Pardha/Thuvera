@@ -2,6 +2,7 @@
 
 from objectmaphelper import *
 
+apollo_MainWindow = {"type": "MainWindow", "unnamed": 1, "visible": 1, "windowTitle": "Apollo"}
 apollo_AlarmsListScreen_AlarmsListScreen = {"name": "AlarmsListScreen", "type": "AlarmsListScreen", "visible": 1, "window": apollo_MainWindow}
 apollo_MainWindow = {"type": "MainWindow", "unnamed": 1, "visible": 1, "windowTitle": "Apollo"}
 alarmsListScreen_frmPopup_AlarmNotificationPopup = {"container": apollo_AlarmsListScreen_AlarmsListScreen, "name": "frmPopup", "type": "AlarmNotificationPopup", "visible": 1}
