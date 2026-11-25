@@ -381,5 +381,10 @@ def main():
     clickButton(waitForObject(names.sclProfiles_thuvera_ProfileButton)) 
     mouseClick(waitForObject(names.comboBox_lbPixmap_QLabel), 24, 20, Qt.NoModifier, Qt.LeftButton)
     mouseClick(waitForObject(names.apollo_frmComboBoxShadow_QFrame), 143, 80, Qt.NoModifier, Qt.LeftButton)
+    clickButton(waitForObject(names.apollo_btExitProfile_QPushButton))
+    clickButton(waitForObject(names.apollo_YES_QPushButton))
+    clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
+    clickButton(waitForObject(names.sclProfiles_thuvera_ProfileButton))
+    clickButton(waitForObject(names.question_OK_QPushButton))
     
     

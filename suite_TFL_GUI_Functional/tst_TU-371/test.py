@@ -120,3 +120,6 @@ def main():
     enterpin()
     create_profile("thuvera")
     edit_thuvera_profile()
+    clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
+    clickButton(waitForObject(names.sclProfiles_thuvera_ProfileButton))
+    clickButton(waitForObject(names.question_OK_QPushButton))

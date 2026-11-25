@@ -134,5 +134,11 @@ def main():
     verify_change(names.centralWidget_pbReduce_QPushButton_3,RIGHT_FREQUENCY,"Right Frequency","decrease")
 
     verify_change(names.centralWidget_pbEnlarge_QPushButton_4,RIGHT_FREQUENCY,"Right Frequency","increase")
+
+    mouseClick(waitForObject(names.centralWidget_comboBox_ComboBox), 366, 23, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObjectItem(names.apollo_aivComboBoxPopup_QTreeView, "Kidney Dust (High)"), 303, 20, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObject(names.comboBox_lbValue_AutoReducibleFontSizeLabel_2), 57, 27, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObjectItem(names.apollo_aivComboBoxPopup_QTreeView, "Kidney Dust (High)"), 106, 25, Qt.NoModifier, Qt.LeftButton)
+
     
     

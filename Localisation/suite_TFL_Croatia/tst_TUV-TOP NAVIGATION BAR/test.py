@@ -38,7 +38,7 @@ def main():
             "EXPIRATION"
         ],
     )
-    test.imagePresent("Verifying Top Navigation Bar")
+
     if test.imagePresent: 
         test.passes("TOP NAVIGATION BAR verified")
     else: test.fail("TOP NAVIGATION BAR verification failed")

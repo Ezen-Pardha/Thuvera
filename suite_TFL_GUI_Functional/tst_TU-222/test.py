@@ -39,7 +39,7 @@ def read_numeric_value(object_name, description):
 def verify_cw_default_settings():
 
     test.log(
-        "========== VERIFY CW DEFAULT SETTINGS =========="
+        " VERIFY CW DEFAULT SETTINGS "
     )
     cw_power_object = None
 
@@ -180,311 +180,425 @@ def verify_pulsed_default_settings():
 
     return result
 
-def create_configure_save_and_cancel_preset():
+# def create_configure_save_and_cancel_preset():
+#
+#     test.log("CREATE AND CONFIGURE PRESET")
+#
+#     overall_result = True
+#
+#     clickButton(
+#         waitForObject(
+#             names.frToolbar_tbAddPreset_QToolButton
+#         )
+#     )
+#
+#
+#     clickButton(
+#         waitForObject(
+#             names.apollo_btCwMode_QToolButton
+#         )
+#     )
+#     cw_result = verify_cw_default_settings()
+#
+#     if not cw_result:
+#         overall_result = False
+#
+#     mouseClick(
+#         waitForObject(
+#             names.pagesWidget_lbValue_FlashableLabel
+#         ),
+#         43, 44,
+#         Qt.NoModifier,
+#         Qt.LeftButton
+#     )
+#
+#
+#     clickButton(
+#         waitForObject(
+#             names.apollo_btPulsedMode_QToolButton
+#         )
+#     )
+#
+#     pulsed_result = verify_pulsed_default_settings()
+#
+#     if not pulsed_result:
+#         overall_result = False
+#
+#     mouseClick(
+#         waitForObject(
+#             names.pagesWidget_lbValue_FlashableLabel_2
+#         ),
+#         59, 66,
+#         Qt.NoModifier,
+#         Qt.LeftButton
+#     )
+#
+#     mouseClick(
+#         waitForObject(
+#             names.pagesWidget_lbValue_FlashableLabel
+#         ),
+#         73, 40,
+#         Qt.NoModifier,
+#         Qt.LeftButton
+#     )
+#     mouseClick(
+#         waitForObject(
+#             names.pagesWidget_lbPowerValue_FlashableLabel
+#         ),
+#         84, 35,
+#         Qt.NoModifier,
+#         Qt.LeftButton
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.apollo_btCwMode_QToolButton
+#         )
+#     )
+#     mouseClick(
+#         waitForObject(
+#             names.apollo_edName_QLineEdit
+#         ),
+#         166, 23,
+#         Qt.NoModifier,
+#         Qt.LeftButton
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.keyboardFrame_t_KeyButtonLetter
+#         )
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.keyboardFrame_h_KeyButtonLetter
+#         )
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.keyboardFrame_u_KeyButtonLetter
+#         )
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.keyboardFrame_v_KeyButtonLetter
+#         )
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.keyboardFrame_e_KeyButtonLetter
+#         )
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.keyboardFrame_r_KeyButtonLetter
+#         )
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.keyboardFrame_a_KeyButtonLetter
+#         )
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.keyboardFrame_Enter_KeyButtonEnter
+#         )
+#     )
+#
+#     test.log(
+#         "PRESET NAME ENTERED: thuvera"
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.pagesWidget_pbEnlarge_QPushButton_2
+#         )
+#     )
+#
+#     mouseClick(
+#         waitForObject(
+#             names.pagesWidget_lbValue_FlashableLabel
+#         ),
+#         45, 37,
+#         Qt.NoModifier,
+#         Qt.LeftButton
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.apollo_btSave_QPushButton
+#         )
+#     )
+#
+#     test.log(
+#         "THUVERA PRESET SAVE ACTION COMPLETED"
+#     )
+#
+#     sendEvent(
+#         "QWheelEvent",
+#         waitForObject(
+#             names.apollo_tvPresets_PresetsTable
+#         ),
+#         619, 390, -120, 0, 2
+#     )
+#
+#     sendEvent(
+#         "QWheelEvent",
+#         waitForObject(
+#             names.apollo_tvPresets_PresetsTable
+#         ),
+#         619, 391, -120, 0, 2
+#     )
+#
+#     sendEvent(
+#         "QWheelEvent",
+#         waitForObject(
+#             names.apollo_tvPresets_PresetsTable
+#         ),
+#         619, 397, -120, 0, 2
+#     )
+#
+#     sendEvent(
+#         "QWheelEvent",
+#         waitForObject(
+#             names.apollo_tvPresets_PresetsTable
+#         ),
+#         619, 408, -120, 0, 2
+#     )
+#
+#     sendEvent(
+#         "QWheelEvent",
+#         waitForObject(
+#             names.apollo_tvPresets_PresetsTable
+#         ),
+#         445, 459, -120, 0, 2
+#     )
+#
+#     sendEvent(
+#         "QWheelEvent",
+#         waitForObject(
+#             names.apollo_tvPresets_PresetsTable
+#         ),
+#         445, 459, -120, 0, 2
+#     )
+#
+#     sendEvent(
+#         "QWheelEvent",
+#         waitForObject(
+#             names.apollo_tvPresets_PresetsTable
+#         ),
+#         445, 459, -120, 0, 2
+#     )
+#
+#
+#     mouseClick(
+#         waitForObjectItem(
+#             names.apollo_tvPresets_PresetsTable,
+#             "-_2"
+#         ),
+#         39, 40,
+#         Qt.NoModifier,
+#         Qt.LeftButton
+#     )
+#
+#     mouseClick(
+#         waitForObjectItem(
+#             names.apollo_tvPresets_PresetsTable,
+#             "-_2"
+#         ),
+#         39, 40,
+#         Qt.NoModifier,
+#         Qt.LeftButton
+#     )
+#
+#     test.log(
+#         "RECORDED PRESET ITEM -_2 SELECTED"
+#     )
+#
+#
+#     clickButton(
+#         waitForObject(
+#             names.frToolbar_tbAddPreset_QToolButton
+#         )
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.apollo_btCwMode_QToolButton
+#         )
+#     )
+#
+#     mouseClick(
+#         waitForObject(
+#             names.pagesWidget_lbValue_FlashableLabel
+#         ),
+#         53, 44,
+#         Qt.NoModifier,
+#         Qt.LeftButton
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.apollo_btCancel_QPushButton
+#         )
+#     )
+#
+#     test.log(
+#         "SECOND PRESET CREATION CANCELLED"
+#     )
+#     clickButton(
+#         waitForObject(
+#             names.apollo_btExitProfile_QPushButton
+#         )
+#     )
+#
+#     clickButton(
+#         waitForObject(
+#             names.question_YES_QPushButton
+#         )
+#     )
+#
+#     test.log(
+#         "PROFILE EXIT COMPLETED"
+#     )
+#
+#     if overall_result:
+#
+#         test.passes(
+#             "PASS: Preset flow and default settings verification completed"
+#         )
+#
+#     else:
+#
+#         test.fail(
+#             "FAIL: Preset flow completed with default settings verification failures"
+#         )
+#
+#     return overall_result
 
-    test.log(
-        "========== CREATE AND CONFIGURE PRESET =========="
-    )
 
-    overall_result = True
+def create_thuvers_preset():
+    """
+    Create and configure the Thuvers preset.
+    """
 
     clickButton(
-        waitForObject(
-            names.frToolbar_tbAddPreset_QToolButton
-        )
+        waitForObject(names.frToolbar_tbAddPreset_QToolButton)
     )
-
 
     clickButton(
-        waitForObject(
-            names.apollo_btCwMode_QToolButton
-        )
+        waitForObject(names.apollo_btCwMode_QToolButton)
     )
-    cw_result = verify_cw_default_settings()
-
-    if not cw_result:
-        overall_result = False
 
     mouseClick(
-        waitForObject(
-            names.pagesWidget_lbValue_FlashableLabel
-        ),
-        43, 44,
-        Qt.NoModifier,
-        Qt.LeftButton
+        waitForObject(names.pagesWidget_lbValue_FlashableLabel),
+        55, 54, Qt.NoModifier, Qt.LeftButton
     )
-
 
     clickButton(
-        waitForObject(
-            names.apollo_btPulsedMode_QToolButton
-        )
-    )
-
-    pulsed_result = verify_pulsed_default_settings()
-
-    if not pulsed_result:
-        overall_result = False
-
-    mouseClick(
-        waitForObject(
-            names.pagesWidget_lbValue_FlashableLabel_2
-        ),
-        59, 66,
-        Qt.NoModifier,
-        Qt.LeftButton
+        waitForObject(names.apollo_btPulsedMode_QToolButton)
     )
 
     mouseClick(
-        waitForObject(
-            names.pagesWidget_lbValue_FlashableLabel
-        ),
-        73, 40,
-        Qt.NoModifier,
-        Qt.LeftButton
-    )
-    mouseClick(
-        waitForObject(
-            names.pagesWidget_lbPowerValue_FlashableLabel
-        ),
-        84, 35,
-        Qt.NoModifier,
-        Qt.LeftButton
-    )
-
-    clickButton(
-        waitForObject(
-            names.apollo_btCwMode_QToolButton
-        )
-    )
-    mouseClick(
-        waitForObject(
-            names.apollo_edName_QLineEdit
-        ),
-        166, 23,
-        Qt.NoModifier,
-        Qt.LeftButton
-    )
-
-    clickButton(
-        waitForObject(
-            names.keyboardFrame_t_KeyButtonLetter
-        )
-    )
-
-    clickButton(
-        waitForObject(
-            names.keyboardFrame_h_KeyButtonLetter
-        )
-    )
-
-    clickButton(
-        waitForObject(
-            names.keyboardFrame_u_KeyButtonLetter
-        )
-    )
-
-    clickButton(
-        waitForObject(
-            names.keyboardFrame_v_KeyButtonLetter
-        )
-    )
-
-    clickButton(
-        waitForObject(
-            names.keyboardFrame_e_KeyButtonLetter
-        )
-    )
-
-    clickButton(
-        waitForObject(
-            names.keyboardFrame_r_KeyButtonLetter
-        )
-    )
-
-    clickButton(
-        waitForObject(
-            names.keyboardFrame_a_KeyButtonLetter
-        )
-    )
-
-    clickButton(
-        waitForObject(
-            names.keyboardFrame_Enter_KeyButtonEnter
-        )
-    )
-
-    test.log(
-        "PRESET NAME ENTERED: thuvera"
-    )
-
-    clickButton(
-        waitForObject(
-            names.pagesWidget_pbEnlarge_QPushButton_2
-        )
+        waitForObject(names.pagesWidget_lbValue_FlashableLabel_2),
+        46, 48, Qt.NoModifier, Qt.LeftButton
     )
 
     mouseClick(
-        waitForObject(
-            names.pagesWidget_lbValue_FlashableLabel
-        ),
-        45, 37,
-        Qt.NoModifier,
-        Qt.LeftButton
+        waitForObject(names.pagesWidget_lbValue_FlashableLabel),
+        45, 47, Qt.NoModifier, Qt.LeftButton
+    )
+
+    mouseClick(
+        waitForObject(names.pagesWidget_lbPowerValue_FlashableLabel),
+        91, 61, Qt.NoModifier, Qt.LeftButton
     )
 
     clickButton(
-        waitForObject(
-            names.apollo_btSave_QPushButton
-        )
+        waitForObject(names.pagesWidget_btMiddlePulse_ButtonWithClickSound)
     )
 
-    test.log(
-        "THUVERA PRESET SAVE ACTION COMPLETED"
+    clickButton(
+        waitForObject(names.pagesWidget_btLongPulse_ButtonWithClickSound)
     )
 
+    clickButton(
+        waitForObject(names.apollo_btCwMode_QToolButton)
+    )
+
+    # Enter preset name: thuvers
+    mouseClick(
+        waitForObject(names.apollo_edName_QLineEdit),
+        176, 33, Qt.NoModifier, Qt.LeftButton
+    )
+
+    clickButton(waitForObject(names.keyboardFrame_t_KeyButtonLetter))
+    clickButton(waitForObject(names.keyboardFrame_h_KeyButtonLetter))
+    clickButton(waitForObject(names.keyboardFrame_u_KeyButtonLetter))
+    clickButton(waitForObject(names.keyboardFrame_v_KeyButtonLetter))
+    clickButton(waitForObject(names.keyboardFrame_e_KeyButtonLetter))
+    clickButton(waitForObject(names.keyboardFrame_r_KeyButtonLetter))
+    clickButton(waitForObject(names.keyboardFrame_s_KeyButtonLetter))
+
+    clickButton(
+        waitForObject(names.keyboardFrame_Enter_KeyButtonEnter)
+    )
+
+    clickButton(
+        waitForObject(names.pagesWidget_pbEnlarge_QPushButton_2)
+    )
+
+    clickButton(
+        waitForObject(names.apollo_btSave_QPushButton)
+    )
+
+    # Select preset _15
     sendEvent(
         "QWheelEvent",
-        waitForObject(
-            names.apollo_tvPresets_PresetsTable
-        ),
-        619, 390, -120, 0, 2
-    )
-
-    sendEvent(
-        "QWheelEvent",
-        waitForObject(
-            names.apollo_tvPresets_PresetsTable
-        ),
-        619, 391, -120, 0, 2
-    )
-
-    sendEvent(
-        "QWheelEvent",
-        waitForObject(
-            names.apollo_tvPresets_PresetsTable
-        ),
-        619, 397, -120, 0, 2
-    )
-
-    sendEvent(
-        "QWheelEvent",
-        waitForObject(
-            names.apollo_tvPresets_PresetsTable
-        ),
-        619, 408, -120, 0, 2
-    )
-
-    sendEvent(
-        "QWheelEvent",
-        waitForObject(
-            names.apollo_tvPresets_PresetsTable
-        ),
-        445, 459, -120, 0, 2
-    )
-
-    sendEvent(
-        "QWheelEvent",
-        waitForObject(
-            names.apollo_tvPresets_PresetsTable
-        ),
-        445, 459, -120, 0, 2
-    )
-
-    sendEvent(
-        "QWheelEvent",
-        waitForObject(
-            names.apollo_tvPresets_PresetsTable
-        ),
-        445, 459, -120, 0, 2
-    )
-
-
-    mouseClick(
-        waitForObjectItem(
-            names.apollo_tvPresets_PresetsTable,
-            "-_2"
-        ),
-        39, 40,
-        Qt.NoModifier,
-        Qt.LeftButton
+        waitForObject(names.apollo_tvPresets_PresetsTable),
+        506, 475, -120, 0, 2
     )
 
     mouseClick(
-        waitForObjectItem(
-            names.apollo_tvPresets_PresetsTable,
-            "-_2"
-        ),
-        39, 40,
-        Qt.NoModifier,
-        Qt.LeftButton
+        waitForObjectItem(names.apollo_tvPresets_PresetsTable, "_15"),
+        107, 37, Qt.NoModifier, Qt.LeftButton
     )
 
-    test.log(
-        "RECORDED PRESET ITEM -_2 SELECTED"
-    )
-
-
+    # Add another preset
     clickButton(
-        waitForObject(
-            names.frToolbar_tbAddPreset_QToolButton
-        )
+        waitForObject(names.frToolbar_tbAddPreset_QToolButton)
     )
 
     clickButton(
-        waitForObject(
-            names.apollo_btCwMode_QToolButton
-        )
+        waitForObject(names.apollo_btPulsedMode_QToolButton)
+    )
+
+    clickButton(
+        waitForObject(names.apollo_btCwMode_QToolButton)
     )
 
     mouseClick(
-        waitForObject(
-            names.pagesWidget_lbValue_FlashableLabel
-        ),
-        53, 44,
-        Qt.NoModifier,
-        Qt.LeftButton
+        waitForObject(names.pagesWidget_lbValue_FlashableLabel),
+        42, 38, Qt.NoModifier, Qt.LeftButton
+    )
+
+    mouseClick(
+        waitForObject(names.apollo_centralWidget_QWidget_2),
+        790, 615, Qt.NoModifier, Qt.LeftButton
     )
 
     clickButton(
-        waitForObject(
-            names.apollo_btCancel_QPushButton
-        )
+        waitForObject(names.apollo_btCancel_QPushButton)
     )
 
-    test.log(
-        "SECOND PRESET CREATION CANCELLED"
-    )
-    clickButton(
-        waitForObject(
-            names.apollo_btExitProfile_QPushButton
-        )
-    )
-
-    clickButton(
-        waitForObject(
-            names.question_YES_QPushButton
-        )
-    )
-
-    test.log(
-        "PROFILE EXIT COMPLETED"
-    )
-
-    if overall_result:
-
-        test.passes(
-            "PASS: Preset flow and default settings verification completed"
-        )
-
-    else:
-
-        test.fail(
-            "FAIL: Preset flow completed with default settings verification failures"
-        )
-
-    return overall_result
-
+    test.passes("Thuvers preset creation and configuration completed")
 
 
 def main():
@@ -501,26 +615,12 @@ def main():
         )
         enterpin()
         open_default_profile_presets()
-        result = create_configure_save_and_cancel_preset()
+        create_thuvers_preset()
 
-        if not result:
+        clickButton(waitForObject(names.frToolbar_tbDeletePreset_QToolButton))
+        mouseClick(waitForObjectItem(names.apollo_tvPresets_PresetsTable, "-_2"), 44, 40, Qt.NoModifier, Qt.LeftButton)
+        mouseClick(waitForObjectItem(names.apollo_tvPresets_PresetsTable, "-_2"), 44, 40, Qt.NoModifier, Qt.LeftButton)
+        clickButton(waitForObject(names.question_OK_QPushButton))
 
-            test.log(
-                "TEST FINISHED WITH DEFAULT SETTINGS FAILURES"
-            )
-
-        else:
-
-            test.log(
-                "TEST FINISHED SUCCESSFULLY"
-            )
-
-    except Exception as e:
-
-        test.fail(
-            "MAIN TEST EXECUTION FAILED: {}".format(
-                str(e)
-            )
-        )
-
-        raise
+    finally:
+        test.log("Passed")

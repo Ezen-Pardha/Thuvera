@@ -323,4 +323,5 @@ centralWidget_slPulseWidth_PulseWidthSelector_2 = {"container": apollo_centralWi
 apollo_MessageBoxBackground = {"type": "MessageBoxBackground", "unnamed": 1, "visible": 1, "window": apollo_MainWindow}
 apollo_YES_QPushButton = {"text": "YES", "type": "QPushButton", "unnamed": 1, "visible": 1, "window": apollo_MainWindow}
 frmComboBoxHeader_lbLogo_QLabel = {"container": apollo_frmComboBoxHeader_ComboBoxTwin, "name": "lbLogo", "type": "QLabel", "visible": 1}
+apollo_wdTopBar_TopBar = {"name": "wdTopBar", "type": "TopBar", "visible": 1, "window": apollo_MainWindow}
 

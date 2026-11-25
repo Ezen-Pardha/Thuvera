@@ -87,5 +87,12 @@ def main():
     verify_adjustment("Left pedal frequency adjustment",names.centralWidget_pbEnlarge_QPushButton_3,left_frequency)   
     verify_adjustment("Right pedal pulse energy adjustment",names.centralWidget_pbEnlarge_QPushButton_2,right_energy)
     verify_adjustment("Right pedal frequency adjustment",names.centralWidget_pbEnlarge_QPushButton_4,right_frequency)
+
+    mouseClick(waitForObject(names.centralWidget_comboBox_ComboBox), 252, 25, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObjectItem(names.apollo_aivComboBoxPopup_QTreeView, "Kidney Dust (High)"), 205, 39, Qt.NoModifier, Qt.LeftButton)
+
+    mouseClick(waitForObject(names.comboBox_lbValue_AutoReducibleFontSizeLabel_2), 50, 33, Qt.NoModifier, Qt.LeftButton)
+    mouseClick(waitForObjectItem(names.apollo_aivComboBoxPopup_QTreeView, "Kidney Dust (High)"), 85, 27, Qt.NoModifier, Qt.LeftButton)
+   
     
     
