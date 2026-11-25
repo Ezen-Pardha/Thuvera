@@ -256,6 +256,39 @@ def service_mode_login():
     clickButton(waitForObject(names.wdKeypad_pushButton_4_QPushButton))
     clickButton(waitForObject(names.wdKeypad_pushButton_1_QPushButton))
     clickButton(waitForObject(names.wdKeypad_pushButton_4_QPushButton))
-    clickButton(waitForObject(names.wdKeypad_pushButton_7_QPushButton))    
-    
+    clickButton(waitForObject(names.wdKeypad_pushButton_7_QPushButton))
+def delete_profile(profile_name, profile_button):
 
+    # test.log("Deleting profile: " + profile_name)
+    snooze(3)
+    clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
+    snooze(5)
+
+    clickButton(waitForObject(profile_button))
+    
+    snooze(5)
+
+    try:
+        ok_button = waitForObjectExists(names.question_OK_QPushButton, 3000)
+        clickButton(ok_button)
+        snooze(3)
+
+        # test.passes(profile_name + " profile deleted successfully")
+
+    except LookupError:
+
+        test.log("Confirmation popup not displayed. Clicking profile again.")
+
+        clickButton(waitForObject(profile_button))
+        snooze(2)
+
+        try:
+            ok_button = waitForObjectExists(names.question_OK_QPushButton, 3000)
+            clickButton(ok_button)
+            snooze(3)
+
+            test.passes(profile_name + " profile deleted successfully")
+
+        except LookupError:
+            test.fail(profile_name + " deletion confirmation popup not displayed")
+            
