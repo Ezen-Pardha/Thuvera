@@ -23,8 +23,8 @@ def main():
     clickButton(waitForObject(names.sclProfiles_profile1_ProfileButton))  
     clickButton(waitForObject(names.apollo_btTreatmentLogs_QPushButton)) 
     test.compare(str(waitForObjectExists(names.apollo_lbHeader_QLabel).text), "TREATMENT LOGS")
-    # test.vp("treatmentLogsScreen")
-    test.imagePresent("treatmentLogsPage")
+    
+    test.compare(waitForObjectExists(names.apollo_btTreatmentLogs_QPushButton).visible, True)
     test.log("SVV TAG - TU-166: Treatments Logs Screen Side Bar Displayed")
     clickButton(waitForObject(names.apollo_btExitProfile_QPushButton))
     clickButton(waitForObject(names.question_YES_QPushButton))

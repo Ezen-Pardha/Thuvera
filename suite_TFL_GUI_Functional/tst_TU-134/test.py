@@ -61,3 +61,6 @@ def main():
     enterpin()
     open_default_profile_presets()
     verify_add_presets_screen_sidebar()
+    
+    
+    

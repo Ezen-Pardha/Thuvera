@@ -613,6 +613,20 @@ def main():
         test.log("VERIFYING CREATED PRESETS AND LOGOS")
         select_created_presets_and_report_details()
 
+        sendEvent("QWheelEvent", waitForObject(names.apollo_tvPresets_PresetsTable), 629, 407, -120, 0, 2)
+        sendEvent("QWheelEvent", waitForObject(names.apollo_tvPresets_PresetsTable), 632, 407, -120, 0, 2)
+        clickButton(waitForObject(names.frToolbar_tbDeletePreset_QToolButton))
+        mouseClick(waitForObjectItem(names.apollo_tvPresets_PresetsTable, "soft"), 260, 22, Qt.NoModifier, Qt.LeftButton)
+        clickButton(waitForObject(names.question_OK_QPushButton))
+        clickButton(waitForObject(names.frToolbar_tbDeletePreset_QToolButton))
+        mouseClick(waitForObjectItem(names.apollo_tvPresets_PresetsTable, "tissues"), 304, 27, Qt.NoModifier, Qt.LeftButton)
+        clickButton(waitForObject(names.question_OK_QPushButton))
+        clickButton(waitForObject(names.frToolbar_tbDeletePreset_QToolButton))
+        mouseClick(waitForObjectItem(names.apollo_tvPresets_PresetsTable, "softy"), 329, 12, Qt.NoModifier, Qt.LeftButton)
+        clickButton(waitForObject(names.question_OK_QPushButton))
+        clickButton(waitForObject(names.frToolbar_tbDeletePreset_QToolButton))
+        mouseClick(waitForObjectItem(names.apollo_tvPresets_PresetsTable, "softtissues"), 331, 22, Qt.NoModifier, Qt.LeftButton)
+        clickButton(waitForObject(names.question_OK_QPushButton))
     except Exception as error:
         test.fail(
             "FAIL: Main test execution failed - {}".format(error)

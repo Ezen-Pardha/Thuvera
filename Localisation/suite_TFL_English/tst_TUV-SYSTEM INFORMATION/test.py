@@ -1,0 +1,34 @@
+# -*- coding: utf-8 -*-
+
+import names
+from squish import *
+from common import *
+def main():
+    clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
+    enterpin()
+    clickButton(waitForObject(names.sclProfiles_Default_ProfileButton))
+    clickButton(waitForObject(names.apollo_btUtilities_QPushButton))
+
+    validate_localization(
+
+        objects=[
+            
+            waitForObject(names.frmHeader_lbHeader_QLabel),
+            waitForObject(names.systemInformationPage_label_2_QLabel),
+            waitForObject(names.systemInformationPage_label_3_QLabel),
+            waitForObject(names.systemInformationPage_label_QLabel)
+        ],
+
+        screen_name="SYSTEM INFORMATION",
+
+        expected_strings=[
+            "SYSTEM INFORMATION",
+            "SOFTWARE VERSION:",
+            "MODEL NUMBER:",
+            "SERIAL NUMBER:"
+        ],
+    )
+    test.compare(str(waitForObjectExists(names.apollo_lbHeader_QLabel).text), "SYSTEM INFORMATION")
+    if str(waitForObjectExists(names.apollo_lbHeader_QLabel).text) == "SYSTEM INFORMATION": 
+        test.passes("SYSTEM INFORMATION Screen verified")
+    else: test.fail("SYSTEM INFORMATION Screen verification failed")

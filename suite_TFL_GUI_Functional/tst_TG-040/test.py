@@ -5,14 +5,8 @@ from common import *
 
 
 def main():
-
-    # Login
     enterpin()
-
-    
     clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
-
-    
     default_button = waitForObjectExists(
         names.sclProfiles_Default_ProfileButton
     )
@@ -22,12 +16,9 @@ def main():
         "Default",
         "Default profile button is present on Profile Selection screen"
     )
-
    
     clickButton(default_button)
-
     snooze(2)
-
     
     left_pedal = waitForObjectExists(
         names.centralWidget_wdLeftPedal_PedalSettingsWidget

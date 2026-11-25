@@ -3,6 +3,9 @@
         <summary/>
         <description/>
     </information>
-    <testsettings/>
+    <testsettings>
+        <imageSearchThreshold>99.999</imageSearchThreshold>
+        <imageSearchTolerant>true</imageSearchTolerant>
+    </testsettings>
     <passwords/>
 </testconfig>

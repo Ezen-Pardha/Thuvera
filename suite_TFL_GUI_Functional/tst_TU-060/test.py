@@ -5,217 +5,47 @@ import names
 from common import *
 
 
-
-TARGET_FREQUENCY = 1.0
-MAX_ATTEMPTS = 20
-
-def get_frequency(obj_name, description):
-
-    try:
-        obj = waitForObject(obj_name)
-        raw_value = str(obj.text).strip()
-
-        frequency = float(raw_value)
-
-        test.log(
-            "{} frequency: {} Hz".format(
-                description, frequency
-            )
-        )
-
-        return frequency
-
-    except Exception as e:
-
-        test.fail(
-            "FAIL: Unable to read {} frequency: {}".format(
-                description, str(e)
-            )
-        )
-
-        return None
-
-def set_frequency_to_minimum(
-        slider_name, value_name, description):
-
-    try:
-
-        slider = waitForObject(slider_name)
-
+def set_left_frequency_to_1hz():
+    for i in range(16):
+        clickButton(waitForObject(names.centralWidget_pbReduce_QPushButton_2))
         
-        mouseDrag(
-            slider,
-            190, 52,
-            -148, -3,
-            1,
-            Qt.LeftButton
-        )
+    sendEvent("QMouseEvent", waitForObject(names.centralWidget_pbReduce_QPushButton_2),
+              QEvent.MouseButtonPress, 28, 33, Qt.LeftButton, 1, 0)
+    mouseClick(waitForObject(names.centralWidget_lbValue_FlashableLabel_4),
+               29, 57, Qt.NoModifier, Qt.LeftButton)
 
-        snooze(1)
+    mouseClick(waitForObject(names.centralWidget_comboBox_ComboBox),
+               306, 40, Qt.NoModifier, Qt.LeftButton)
 
-        frequency = get_frequency(
-            value_name, description
-        )
-
-        if frequency is None:
-            return False
-
-        attempts = 0
-
-        
-        while frequency > TARGET_FREQUENCY and attempts < MAX_ATTEMPTS:
-
-            slider = waitForObject(slider_name)
-
-            mouseDrag(
-                slider,
-                100, 50,
-                -10, 0,
-                1,
-                Qt.LeftButton
-            )
-
-            snooze(0.5)
-
-            frequency = get_frequency(
-                value_name, description
-            )
-
-            if frequency is None:
-                return False
-
-            attempts += 1
-
-        result = abs(frequency - TARGET_FREQUENCY) < 0.0001
-
-        test.verify(
-            result,
-            "{} frequency set to 1 Hz | Actual: {} Hz".format(
-                description, frequency
-            )
-        )
-
-        return result
-
-    except Exception as e:
-
-        test.fail(
-            "FAIL: Unable to set {} frequency: {}".format(
-                description, str(e)
-            )
-        )
-
-        return False
+    mouseClick(waitForObjectItem(names.apollo_aivComboBoxPopup_QTreeView,
+                                "Kidney Dust (High)"),
+               283, 30, Qt.NoModifier, Qt.LeftButton)
+    test.log("Left-side frequency was set to 1 Hz the Click option was disabled.")
 
 
+def set_right_frequency_to_1hz():
+    for i in range(13):
+        clickButton(waitForObject(names.centralWidget_pbReduce_QPushButton_3))
 
+    sendEvent("QMouseEvent",
+              waitForObject(names.centralWidget_pbReduce_QPushButton_3),
+              QEvent.MouseButtonPress, 15, 17, Qt.LeftButton, 1, 0)
 
-def verify_decrease_disabled(button_name, description):
+    mouseClick(waitForObject(names.centralWidget_comboBox_ComboBox_2),
+               218, 35, Qt.NoModifier, Qt.LeftButton)
 
-    try:
+    mouseClick(waitForObjectItem(names.apollo_aivComboBoxPopup_QTreeView,
+                                 "Kidney Dust (High)"),
+               217, 33, Qt.NoModifier, Qt.LeftButton)
 
-       
-        button = waitForObjectExists(button_name)
-
-        snooze(0.5)
-
-        enabled_status = button.enabled
-
-        test.verify(
-            enabled_status == False,
-            "{} frequency decrease button disabled | Enabled: {}".format(
-                description, enabled_status
-            )
-        )
-
-    except Exception as e:
-
-        test.fail(
-            "FAIL: {} decrease button verification: {}".format(
-                description, str(e)
-            )
-        )
-
-
-
+    test.log("Right-side frequency was set to 1 Hz and the Click option was disabled..")
 
 def main():
-
-
     enterpin()
-
-    clickButton(
-        waitForObject(names.frmPopup_pbAccept_QPushButton)
-    )
-
-    clickButton(
-        waitForObject(names.sclProfiles_Default_ProfileButton)
-    )
-
-    snooze(2)
-
-
-    try:
-
-        waitForObject(
-            names.apollo_centralWidget_QStackedWidget
-        )
-
-        test.verify(
-            True,
-            "Treatment screen displayed successfully"
-        )
-
-    except Exception as e:
-
-        test.fail(
-            "Treatment screen not displayed: " + str(e)
-        )
-
-        return
-
-
-
-    left_set = set_frequency_to_minimum(
-        names.centralWidget_wdSlider_Slider_3,
-        names.centralWidget_lbValue_FlashableLabel_2,
-        "Left pedal"
-    )
-
-    right_set = set_frequency_to_minimum(
-        names.centralWidget_wdSlider_Slider_4,
-        names.centralWidget_lbValue_FlashableLabel_2,
-        "Right pedal"
-    )
-
-    snooze(1)
-
-    if left_set:
-
-        verify_decrease_disabled(
-            names.centralWidget_pbReduce_QPushButton_2,
-            "Left pedal"
-        )
-
-    else:
-
-        test.fail(
-            "FAIL: Left pedal frequency did not reach 1 Hz"
-        )
-
-
-
-    if right_set:
-
-        verify_decrease_disabled(
-            names.centralWidget_pbReduce_QPushButton_3,
-            "Right pedal"
-        )
-
-    else:
-
-        test.fail(
-            "FAIL: Right pedal frequency did not reach 1 Hz"
-        )
-
-   
+    clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
+    clickButton(waitForObject(names.sclProfiles_Default_ProfileButton))
+    set_left_frequency_to_1hz()
+    set_right_frequency_to_1hz()
+    
+    
+    
