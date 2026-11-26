@@ -5,8 +5,7 @@ from common import *
 def main():
     clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
     enterpin()
-    clickButton(waitForObject(names.sclProfiles_Default_ProfileButton))
-    clickButton(waitForObject(names.apollo_btSettings_QPushButton))
+    open_default_profile_settings()
     mouseClick(waitForObject(names.frmComboBox_cbLang_QComboBox), 461, 30, Qt.NoModifier, Qt.LeftButton)
     mouseClick(waitForObjectItem(names.frmComboBox_cbLang_QComboBox, "Dansk (Denmark)"), 91, 42, Qt.NoModifier, Qt.LeftButton)
     clickButton(waitForObject(names.apollo_btHome_QPushButton))
@@ -38,7 +37,4 @@ def main():
         ],
     )
     test.imagePresent("Verifying Top Navigation Bar")
-    if test.imagePresent: 
-        test.passes("TOP NAVIGATION BAR verified")
-    else: test.fail("TOP NAVIGATION BAR verification failed")
     

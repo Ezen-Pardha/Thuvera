@@ -662,3 +662,185 @@ def match_profile_placeholder(actual_text, expected_text):
     )
 
     return re.fullmatch(pattern, actual) is not None
+
+
+
+def validate_aiming_beam_label():
+ 
+    from openpyxl import load_workbook
+ 
+    english_text = "AIMING BEAM"
+ 
+    workbook = load_workbook(
+        EXCEL_PATH,
+        read_only=True,
+        data_only=True
+    )
+ 
+    try:
+        sheet = workbook["GUI Strings"]
+ 
+        language_column = None
+ 
+        for column in range(1, sheet.max_column + 1):
+ 
+            language_name = sheet.cell(row=1, column=column).value
+ 
+            if (
+                language_name
+                and str(language_name).strip().casefold()
+                == LANGUAGE.strip().casefold()
+            ):
+                language_column = column
+                break
+ 
+        if language_column is None:
+            test.fail(
+                "Language '{}' not found in Excel.".format(LANGUAGE)
+            )
+            return
+ 
+        expected_text = None
+ 
+        for row in range(2, sheet.max_row + 1):
+ 
+            english_value = sheet.cell(row=row, column=1).value
+ 
+            if (
+                english_value
+                and str(english_value).strip().casefold()
+                == english_text.casefold()
+            ):
+                expected_text = sheet.cell(
+                    row=row,
+                    column=language_column
+                ).value
+                break
+ 
+        if expected_text is None or not str(expected_text).strip():
+            test.fail(
+                "'{}' translation not found in Excel for language '{}'.".format(
+                    english_text,
+                    LANGUAGE
+                )
+            )
+            return
+ 
+        expected_text = str(expected_text).strip()
+ 
+    finally:
+        workbook.close()
+ 
+    aiming_beam_label = waitForObject({
+        "name": "lbAimingBeam",
+        "type": "QLabel"
+    })
+ 
+    actual_text = str(aiming_beam_label.text).strip()
+ 
+    if normalize(actual_text) == normalize(expected_text):
+ 
+        test.passes(
+            english_text + " -> " + expected_text
+        )
+ 
+    else:
+ 
+        test.fail(
+            "FAIL: "
+            + english_text
+            + " -> "
+            + expected_text
+            + " | Actual UI text: "
+            + actual_text
+        )
+        
+        
+def validate_assistant_label():
+
+    from openpyxl import load_workbook
+
+    english_text = "Assistant"
+
+    workbook = load_workbook(
+        EXCEL_PATH,
+        read_only=True,
+        data_only=True
+    )
+
+    try:
+        sheet = workbook["GUI Strings"]
+
+        language_column = None
+
+        for column in range(1, sheet.max_column + 1):
+            language_name = sheet.cell(row=1, column=column).value
+
+            if (
+                language_name
+                and str(language_name).strip().casefold()
+                == LANGUAGE.strip().casefold()
+            ):
+                language_column = column
+                break
+
+        if language_column is None:
+            test.fail(
+                "Language '{}' not found in Excel.".format(LANGUAGE)
+            )
+            return
+
+        expected_text = None
+
+        for row in range(2, sheet.max_row + 1):
+            english_value = sheet.cell(row=row, column=1).value
+
+            if (
+                english_value
+                and str(english_value).strip().casefold()
+                == english_text.casefold()
+            ):
+                expected_text = sheet.cell(
+                    row=row,
+                    column=language_column
+                ).value
+                break
+
+        if expected_text is None or not str(expected_text).strip():
+            test.fail(
+                "'{}' translation not found in Excel for language '{}'.".format(
+                    english_text,
+                    LANGUAGE
+                )
+            )
+            return
+
+        expected_text = str(expected_text).strip()
+
+    finally:
+        workbook.close()
+
+    assistant_button = waitForObject(
+        names.apollo_tbAssistant_QToolButton
+    )
+
+    actual_text = str(
+        assistant_button.property("localizationText")
+    ).strip()
+
+    if normalize(actual_text) == normalize(expected_text):
+
+        test.passes(
+            english_text + " -> " + expected_text
+        )
+
+    else:
+
+        test.fail(
+            "FAIL: "
+            + english_text
+            + " -> "
+            + expected_text
+            + " | Actual UI text: "
+            + actual_text
+        )

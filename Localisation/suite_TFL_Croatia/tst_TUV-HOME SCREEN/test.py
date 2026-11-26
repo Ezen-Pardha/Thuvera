@@ -6,8 +6,7 @@ from common import *
 def main():
     clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
     enterpin()
-    clickButton(waitForObject(names.sclProfiles_Default_ProfileButton))
-    clickButton(waitForObject(names.apollo_btSettings_QPushButton))
+    open_default_profile_settings()
     mouseClick(waitForObject(names.frmComboBox_cbLang_QComboBox), 461, 30, Qt.NoModifier, Qt.LeftButton)
     mouseClick(waitForObjectItem(names.frmComboBox_cbLang_QComboBox, "hrvatski (Croatia)"), 91, 42, Qt.NoModifier, Qt.LeftButton)
     clickButton(waitForObject(names.apollo_btHome_QPushButton))
@@ -19,13 +18,6 @@ def main():
     clickButton(waitForObject(names.centralWidget_pbPulsedMode_QToolButton))
     clickButton(waitForObject(names.centralWidget_pbCwMode_QToolButton))
     mouseClick(waitForObject(names.centralWidget_PulseModeWidget_PulseModeWidget), 457, 469, Qt.NoModifier, Qt.LeftButton)
-    aiming_beam_label = waitForObject({"name": "lbAimingBeam", "type": "QLabel"})
-    aiming_beam_text = str(aiming_beam_label.text).strip()
-    test.log("Aiming Beam label text: {}".format(aiming_beam_text))
-    test.verify(
-        aiming_beam_text == "AIMING BEAM",
-        "Expected AIMING BEAM, but found: {}".format(aiming_beam_text)
-    )
     mouseClick(waitForObject(names.stateSwitch_lbStandby_QLabel), 155, 48, Qt.NoModifier, Qt.LeftButton)
     mouseClick(waitForObject(names.stateSwitch_lbReady_QLabel), 104, 35, Qt.NoModifier, Qt.LeftButton)
     test.compare(str(waitForObjectExists(names.stateSwitch_lbReady_QLabel).text), "SPREMNO")
@@ -34,6 +26,7 @@ def main():
     else: test.fail("Home Screen READY verification failed")
     mouseClick(waitForObject(names.stateSwitch_lbStandby_QLabel), 176, 34, Qt.NoModifier, Qt.LeftButton) 
     mouseClick(waitForObject(names.comboBox_lbValue_AutoReducibleFontSizeLabel), 225, 26, Qt.NoModifier, Qt.LeftButton)
+    validate_aiming_beam_label()
     
     validate_localization(
 
@@ -44,7 +37,6 @@ def main():
             waitForObject(names.centralWidget_lbPulseWidth_QLabel),
             waitForObject(names.centralWidget_pbPulsedMode_QToolButton),
             waitForObject(names.centralWidget_pbCwMode_QToolButton),
-            waitForObject(names.centralWidget_PulseModeWidget_PulseModeWidget),
             waitForObject(names.stateSwitch_lbStandby_QLabel),
             waitForObject(names.stateSwitch_lbReady_QLabel),
             waitForObjectExists(names.aivComboBoxPopup_Bubre_ni_pijesak_visoko_QModelIndex),
@@ -74,7 +66,6 @@ def main():
             "PULSE WIDTH",
             "PULSED",
             "CW",
-            "AIMING BEAM",
             "STANDBY",
             "READY",
             "Kidney Dust (High)",
@@ -93,13 +84,6 @@ def main():
             "Tumor Ablation/Excision"
             
         ],
-    )
-    aiming_beam_label = waitForObject({"name": "lbAimingBeam", "type": "QLabel"})
-    aiming_beam_text = str(aiming_beam_label.text).strip()
-    test.log("Aiming Beam label text: {}".format(aiming_beam_text))
-    test.verify(
-        aiming_beam_text == "AIMING BEAM",
-        "Expected AIMING BEAM, but found: {}".format(aiming_beam_text)
     )
     mouseClick(waitForObject(names.frmComboBoxHeader_lbPixmap_QLabel), 16, 22, Qt.NoModifier, Qt.LeftButton)
     test.compare(str(waitForObjectExists(names.stateSwitch_lbStandby_QLabel).text), "STANJE\nMIROVANJA")
