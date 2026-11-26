@@ -323,5 +323,30 @@ centralWidget_slPulseWidth_PulseWidthSelector_2 = {"container": apollo_centralWi
 apollo_MessageBoxBackground = {"type": "MessageBoxBackground", "unnamed": 1, "visible": 1, "window": apollo_MainWindow}
 apollo_YES_QPushButton = {"text": "YES", "type": "QPushButton", "unnamed": 1, "visible": 1, "window": apollo_MainWindow}
 frmComboBoxHeader_lbLogo_QLabel = {"container": apollo_frmComboBoxHeader_ComboBoxTwin, "name": "lbLogo", "type": "QLabel", "visible": 1}
+
+tableView_0_2_QModelIndex = {"column": 2, "container": tabSystemEventLog_tableView_QTableView, "row": 0, "type": "QModelIndex"}
+tableView_1_2_QModelIndex = {"column": 2, "container": tabSystemEventLog_tableView_QTableView, "row": 1, "type": "QModelIndex"}
+tableView_3_2_QModelIndex = {"column": 2, "container": tabSystemEventLog_tableView_QTableView, "row": 3, "type": "QModelIndex"}
+tableView_4_2_QModelIndex = {"column": 2, "container": tabSystemEventLog_tableView_QTableView, "row": 4, "type": "QModelIndex"}
+tableView_2_2_QModelIndex = {"column": 2, "container": tabSystemEventLog_tableView_QTableView, "row": 2, "type": "QModelIndex"}
+apollo_lbTitle_QLabel = {"name": "lbTitle", "type": "QLabel", "visible": 1, "window": apollo_MainWindow}
 apollo_wdTopBar_TopBar = {"name": "wdTopBar", "type": "TopBar", "visible": 1, "window": apollo_MainWindow}
 
+
+apollo_tbLogoff_QToolButton = {"name": "tbLogoff", "type": "QToolButton", "visible": 1, "window": apollo_MainWindow}
+apollo_Advice_MessageBox = {"name": "Advice", "type": "MessageBox", "visible": 1, "window": apollo_MainWindow}
+advice_TextLabel_QLabel = {"container": apollo_Advice_MessageBox, "name": "TextLabel", "type": "QLabel", "visible": 1}
+keyboardFrame_KeyButtonLetter_4 = {"container": apollo_keyboardFrame_QFrame, "text": "]", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+sclProfiles_Test_ProfileButton = {"container": apollo_sclProfiles_ProfilesScroll, "text": "Test", "type": "ProfileButton", "unnamed": 1, "visible": 1}
+keyboardFrame_ABC_KeyButtonNumSwitch = {"container": apollo_keyboardFrame_QFrame, "text": "ABC", "type": "KeyButtonNumSwitch", "unnamed": 1, "visible": 1}
+question_CANCEL_QPushButton = {"container": apollo_Question_MessageBox, "text": "CANCEL", "type": "QPushButton", "unnamed": 1, "visible": 1}
+keyboardFrame_q_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "q", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+keyboardFrame_z_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "z", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+keyboardFrame_x_KeyButtonLetter = {"container": apollo_keyboardFrame_QFrame, "text": "x", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+keyboardFrame_KeyButtonLetter_5 = {"container": apollo_keyboardFrame_QFrame, "text": ",", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+keyboardFrame_KeyButtonLetter_6 = {"container": apollo_keyboardFrame_QFrame, "text": ".", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+keyboardFrame_KeyButtonShift = {"aboveWidget": keyboardFrame_Enter_KeyButtonEnter, "container": apollo_keyboardFrame_QFrame, "leftWidget": keyboardFrame_KeyButtonLetter_6, "type": "KeyButtonShift", "unnamed": 1, "visible": 1}
+keyboardFrame_123_KeyButtonSpace = {"aboveWidget": keyboardFrame_x_KeyButtonLetter, "container": apollo_keyboardFrame_QFrame, "leftWidget": keyboardFrame_123_KeyButtonNumSwitch, "type": "KeyButtonSpace", "unnamed": 1, "visible": 1}
+keyboardFrame_KeyButtonLetter_7 = {"container": apollo_keyboardFrame_QFrame, "text": "'", "type": "KeyButtonLetter", "unnamed": 1, "visible": 1}
+apollo_KeyboardPopup_KeyboardPopup = {"name": "KeyboardPopup", "type": "KeyboardPopup", "visible": 1, "window": apollo_MainWindow}
+frWizardPlace_WizardLevelWidget = {"container": apollo_frWizardPlace_WizardWidget, "type": "WizardLevelWidget", "unnamed": 1, "visible": 1}
