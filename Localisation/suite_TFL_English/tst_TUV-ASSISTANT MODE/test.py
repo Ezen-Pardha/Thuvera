@@ -161,13 +161,6 @@ def main():
     clickButton(waitForObject(names.centralWidget_pbPulsedMode_QToolButton))
     clickButton(waitForObject(names.centralWidget_pbCwMode_QToolButton))
     mouseClick(waitForObject(names.centralWidget_PulseModeWidget_PulseModeWidget), 457, 469, Qt.NoModifier, Qt.LeftButton)
-    aiming_beam_label = waitForObject({"name": "lbAimingBeam", "type": "QLabel"})
-    aiming_beam_text = str(aiming_beam_label.text).strip()
-    test.log("Aiming Beam label text: {}".format(aiming_beam_text))
-    test.verify(
-        aiming_beam_text == "AIMING BEAM",
-        "Expected AIMING BEAM, but found: {}".format(aiming_beam_text)
-    )
     mouseClick(waitForObject(names.stateSwitch_lbReady_QLabel), 179, 44, Qt.NoModifier, Qt.LeftButton)
     mouseClick(waitForObject(names.stateSwitch_lbStandby_QLabel), 119, 28, Qt.NoModifier, Qt.LeftButton)
     validate_localization(
@@ -178,7 +171,6 @@ def main():
             waitForObject(names.centralWidget_lbPulseWidth_QLabel),
             waitForObject(names.centralWidget_pbPulsedMode_QToolButton),
             waitForObject(names.centralWidget_pbCwMode_QToolButton),
-            waitForObject(names.centralWidget_PulseModeWidget_PulseModeWidget),
             waitForObject(names.stateSwitch_lbReady_QLabel),
             waitForObject(names.stateSwitch_lbStandby_QLabel)
         ],
@@ -190,11 +182,11 @@ def main():
             "PULSE WIDTH",
             "PULSED",
             "CW",
-            "AIMING BEAM",
             "READY",
             "STANDBY"
         ],
     )
+    validate_aiming_beam_label()
     mouseClick(waitForObject(names.comboBox_lbValue_AutoReducibleFontSizeLabel), 47, 25, Qt.NoModifier, Qt.LeftButton)
     mouseClick(waitForObjectItem(names.apollo_aivComboBoxPopup_QTreeView, "Enucleation"), 68, 35, Qt.NoModifier, Qt.LeftButton)
     mouseClick(waitForObject(names.comboBox_lbPixmap_QLabel), 26, 24, Qt.NoModifier, Qt.LeftButton)

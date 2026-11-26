@@ -6,8 +6,7 @@ from common import *
 def main():
     clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
     enterpin()
-    clickButton(waitForObject(names.sclProfiles_Default_ProfileButton))
-    clickButton(waitForObject(names.apollo_btSettings_QPushButton))
+    open_default_profile_settings()
     mouseClick(waitForObject(names.frmComboBox_cbLang_QComboBox), 260, 26, Qt.NoModifier, Qt.LeftButton)
     mouseClick(waitForObjectItem(names.frmComboBox_cbLang_QComboBox, "hrvatski (Croatia)"), 89, 33, Qt.NoModifier, Qt.LeftButton)
     clickButton(waitForObject(names.apollo_btUtilities_QPushButton))

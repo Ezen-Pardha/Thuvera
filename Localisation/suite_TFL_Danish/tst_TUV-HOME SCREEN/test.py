@@ -6,8 +6,7 @@ from common import *
 def main():
     clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
     enterpin()
-    clickButton(waitForObject(names.sclProfiles_Default_ProfileButton))
-    clickButton(waitForObject(names.apollo_btSettings_QPushButton))
+    open_default_profile_settings()
     mouseClick(waitForObject(names.frmComboBox_cbLang_QComboBox), 461, 30, Qt.NoModifier, Qt.LeftButton)
     mouseClick(waitForObjectItem(names.frmComboBox_cbLang_QComboBox, "Dansk (Denmark)"), 91, 42, Qt.NoModifier, Qt.LeftButton)
     clickButton(waitForObject(names.apollo_btHome_QPushButton))
@@ -37,7 +36,6 @@ def main():
             waitForObject(names.centralWidget_lbPulseWidth_QLabel),
             waitForObject(names.centralWidget_pbPulsedMode_QToolButton),
             waitForObject(names.centralWidget_pbCwMode_QToolButton),
-            waitForObject(names.centralWidget_PulseModeWidget_PulseModeWidget),
             waitForObject(names.stateSwitch_lbStandby_QLabel),
             waitForObject(names.stateSwitch_lbReady_QLabel),
             waitForObjectExists(names.aivComboBoxPopup_Nyregrus_h_jt_QModelIndex),
@@ -67,7 +65,6 @@ def main():
             "PULSE WIDTH",
             "PULSED",
             "CW",
-            "AIMING BEAM",
             "STANDBY",
             "READY",
             "Kidney Dust (High)",
@@ -87,6 +84,8 @@ def main():
             
         ],
     )
+    
+    validate_aiming_beam_label()
     mouseClick(waitForObject(names.frmComboBoxHeader_lbPixmap_QLabel), 16, 22, Qt.NoModifier, Qt.LeftButton)
     test.compare(str(waitForObjectExists(names.stateSwitch_lbStandby_QLabel).text), "STANDBY")
     if str(waitForObjectExists(names.stateSwitch_lbStandby_QLabel).text) == "STANDBY": 
