@@ -429,7 +429,7 @@ def main():
     """Select Test1 profile"""
     clickButton(waitForObject(names.sclProfiles_Test1_ProfileButton))
     snooze(1)
-    test.passes("Test1 profile selected for deletion.")
+    test.passes("Test1 profile selected for confirmation popup.")
     
     """Verify delete confirmation message"""
     delete_message = str(waitForObjectExists(names.question_TextLabel_QLabel).text)
