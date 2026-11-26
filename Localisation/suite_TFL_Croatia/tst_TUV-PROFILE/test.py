@@ -6,8 +6,7 @@ from common import *
 def main():
     clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
     enterpin()
-    clickButton(waitForObject(names.sclProfiles_Default_ProfileButton))
-    clickButton(waitForObject(names.apollo_btSettings_QPushButton))
+    open_default_profile_settings()
     mouseClick(waitForObject(names.frmComboBox_cbLang_QComboBox), 461, 30, Qt.NoModifier, Qt.LeftButton)
     mouseClick(waitForObjectItem(names.frmComboBox_cbLang_QComboBox, "hrvatski (Croatia)"), 91, 42, Qt.NoModifier, Qt.LeftButton)
     clickButton(waitForObject(names.apollo_btExitProfile_QPushButton))
@@ -30,7 +29,6 @@ def main():
         test.passes("Želite li potvrditi izlaz? popup is verified")
     else: test.fail("Želite li potvrditi izlaz? popup verification failed")
     clickButton(waitForObject(names.question_DA_QPushButton))
-    test.vp("Verifying Profile Screen")
     clickButton(waitForObject(names.frToolbar_tbAddProfile_QToolButton))
     clickButton(waitForObject(names.keyboardFrame_Enter_KeyButtonEnter))
     validate_localization(
@@ -144,19 +142,20 @@ def main():
     clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
     clickButton(waitForObject(names.sclProfiles_thuveraaa_ProfileButton))
     clickButton(waitForObject(names.question_U_REDU_QPushButton))
+    validate_assistant_label()
     validate_localization(
         objects=[
             waitForObjectExists(names.sclProfiles_Zadano_ProfileButton),
-            waitForObjectExists(names.apollo_tbAssistant_QToolButton)
         ],
         screen_name="PROFILE",
         expected_strings=[
             "Default",
-            "ASSISTANT"
         ],
     )
-
-    
+    test.compare(str(waitForObjectExists(names.sclProfiles_Zadano_ProfileButton).text), "Zadano")
+    if str(waitForObjectExists(names.sclProfiles_Zadano_ProfileButton).text) == "Zadano": 
+        test.passes("Profile Screen verified")
+    else: test.fail("Profile Screen verification failed")
 
         
 

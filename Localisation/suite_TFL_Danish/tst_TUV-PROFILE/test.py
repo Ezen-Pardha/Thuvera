@@ -6,8 +6,7 @@ from common import *
 def main():
     clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
     enterpin()
-    clickButton(waitForObject(names.sclProfiles_Default_ProfileButton, 32878))
-    clickButton(waitForObject(names.apollo_btSettings_QPushButton))
+    open_default_profile_settings()
     mouseClick(waitForObject(names.frmComboBox_cbLang_QComboBox), 461, 30, Qt.NoModifier, Qt.LeftButton)
     mouseClick(waitForObjectItem(names.frmComboBox_cbLang_QComboBox, "Dansk (Denmark)"), 91, 42, Qt.NoModifier, Qt.LeftButton)
     clickButton(waitForObject(names.apollo_btHome_QPushButton))
@@ -144,19 +143,21 @@ def main():
     clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
     clickButton(waitForObject(names.sclProfiles_thuveraaa_ProfileButton))
     clickButton(waitForObject(names.question_OK_QPushButton))
+    validate_assistant_label()
     validate_localization(
         objects=[
             waitForObjectExists(names.sclProfiles_Standard_ProfileButton),
-            waitForObjectExists(names.apollo_tbAssistant_QToolButton)
         ],
         screen_name="PROFILE",
         expected_strings=[
             "Default",
-            "ASSISTANT"
         ],
     )
 
-    
+    test.compare(str(waitForObjectExists(names.sclProfiles_Standard_ProfileButton).text), "Standard")
+    if str(waitForObjectExists(names.sclProfiles_Standard_ProfileButton).text) == "Standard": 
+        test.passes("Profile Screen verified")
+    else: test.fail("Profile Screen verification failed")
 
         
 

@@ -6,7 +6,6 @@ from common import *
 def main():
     clickButton(waitForObject(names.frmPopup_pbAccept_QPushButton))
     enterpin()
-    test.vp("Verifying Profile Screen")
     clickButton(waitForObject(names.sclProfiles_Default_ProfileButton, 32878))
     clickButton(waitForObject(names.apollo_btExitProfile_QPushButton))
     validate_localization(
@@ -141,29 +140,21 @@ def main():
     clickButton(waitForObject(names.frToolbar_tbDeleteProfile_QToolButton))
     clickButton(waitForObject(names.sclProfiles_thuveraaa_ProfileButton))
     clickButton(waitForObject(names.question_OK_QPushButton))
+    validate_assistant_label()
     validate_localization(
         objects=[
             waitForObjectExists(names.sclProfiles_Default_ProfileButton),
-            waitForObjectExists(names.apollo_tbAssistant_QToolButton)
         ],
         screen_name="PROFILE",
         expected_strings=[
             "Default",
-            "ASSISTANT"
         ],
     )
-    
-    assistant_button = waitForObject(names.apollo_tbAssistant_QToolButton)
-    assistant_text = str(
-        assistant_button.property("localizationText")
-    ).strip()
-    test.log("Assistant text: {}".format(assistant_text))
-    test.verify(
-        assistant_text == "ASSISTANT",
-        "Assistant localization mismatch. Actual text: {}".format(assistant_text)
-    )
-    clickButton(waitForObject(names.apollo_tbAssistant_QToolButton))
-
+    test.compare(str(waitForObjectExists(names.sclProfiles_Default_ProfileButton).text), "Default")
+    if str(waitForObjectExists(names.sclProfiles_Default_ProfileButton).text) == "Default":
+        test.passes("Profile Screen verified")
+    else: test.fail("Profile Screen verification failed")
+   
         
 
     

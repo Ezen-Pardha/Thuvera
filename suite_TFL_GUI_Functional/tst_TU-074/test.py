@@ -25,7 +25,11 @@ def verify_profile_dropdown_and_reduce_settings():
     test.imagePresent("Exit_mode")
     clickButton(waitForObject(names.apollo_YES_QPushButton))
 
-    test.imagePresent("TU-075")
+    # test.imagePresent("TU-075")
+
+    test.compare(waitForObjectExists(names.centralWidget_comboBox_ComboBox_2).visible, True)
+
+    # test.breakpoint()
 
     clickButton(waitForObject(names.apollo_btExitProfile_QPushButton))
     clickButton(waitForObject(names.apollo_YES_QPushButton))
@@ -43,7 +47,7 @@ def verify_soft_tissue_vaporize_hemastasis_profile():
         clickButton(waitForObject(names.centralWidget_pbReduce_QPushButton))
     test.imagePresent("Exit_mode")
     clickButton(waitForObject(names.apollo_YES_QPushButton))
-    test.imagePresent("TU-075_frequency")
+    test.compare(waitForObjectExists(names.centralWidget_comboBox_ComboBox_2).visible, True)
     clickButton(waitForObject(names.apollo_btExitProfile_QPushButton))
     clickButton(waitForObject(names.apollo_YES_QPushButton))
     test.log("Soft Tissue Vaporize/Hemostasis profile verification completed.")

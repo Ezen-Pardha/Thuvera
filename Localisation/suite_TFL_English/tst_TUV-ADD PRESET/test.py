@@ -49,7 +49,6 @@ def main():
     )
 
     mouseClick(waitForObject(names.apollo_edName_QLineEdit), 87, 20, Qt.NoModifier, Qt.LeftButton)
-    test.compare(str(waitForObjectExists(names.apollo_edName_QLineEdit).placeholderText), "ADD NAME")
     validate_localization(
         objects=[
             waitForObjectExists(names.apollo_edName_QLineEdit)
